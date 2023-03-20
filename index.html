@@ -146,12 +146,50 @@
 
     <!-- FOOTER -->
 
-    <footer class="fixed-bottom" style="background-color: black; color: gray;">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem excepturi, quis enim totam doloremque
-            iste
-            labore ipsum debitis reiciendis error consequatur reprehenderit. Pariatur suscipit excepturi ab atque eaque
-            animi!
-        </p>
+    <footer class="fixed-bottom" style="background-color:#222222; color: gray;">
+        <div class="row row-cols-3">
+          <div class="col col-3" id="footerAlbum">
+            <!-- <div>
+              <img src="http://www.placekitten.com/80" alt="">
+            </div>         -->
+            <div class="card">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 p-1">
+                  <img src="http://www.placekitten.com/100" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <p class="card-title m-0">Song</p>
+                    <p class="card-text"><small>Artist</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-7" id="footerPlayer">
+            <div class="row">
+              <div class="col col-12 d-flex justify-content-center align-items-center">
+                <i class="px-3 bi bi-shuffle"></i>
+                <i class="px-3 bi bi-skip-backward-fill"></i>
+                <i class="px-3 bi bi-play-circle fs-3"></i>
+                <i class="px-3 bi bi-skip-forward-fill"></i>
+                <i class="px-3 bi bi-repeat-1"></i>
+              </div>
+            </div>
+            <div class="row row-cols-3 align-items-center">
+              <div class="col col-1">
+                <span>0:00</span>
+              </div>
+              <div class="col col-10">
+                <input type="range" name="" id="" class="w-100">
+              </div>
+              <div class="col col-1">
+                <span id="songLength">3:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col col-2" id="footerRightIcons"></div>
+        </div>
     </footer>
 
     <!-- FINE FOOTER -->
