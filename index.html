@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="container-fluid">
 
   <div class="row row-cols-3">
 
@@ -42,11 +42,48 @@
     <!-- FINE MAIN CONTAINER -->
 
     <!-- SIDEBAR DESTRA -->
+    <!-- <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+    <div class="offcanvas offcanvas-end" style="background-color: black; color: gray;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div> -->
 
     <div id="rightSidebar" class="col col-2" style="background-color: black; color: gray;">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero consequatur deleniti maxime soluta animi
-        fugiat reprehenderit ipsam quos autem. Excepturi rerum eaque dicta labore reiciendis! Ab ipsum necessitatibus
-        explicabo natus!</p>
+      <div class="row">
+        <div class="p-2 d-flex justify-content-between">
+          <div>
+            <p><strong>Attività Amici</strong></p>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-add"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+              <path
+                d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg"
+              viewBox="0 0 16 16">
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-3"><img src="http://placekitten.it/100" alt="cat"></div>
+        <div class="col col-7">
+          <p style="font-size: 0.9em;"><strong>Charlie Hookham</strong></p>
+          <p style="font-size: 0.6em;">In Camera <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="8"/>
+          </svg> Yumi Zouma</p>
+       </div> <!-- non ho avuto molto modo di lavorarci su, domani lo termino. scusate ragazzi -->
+      </div>
     </div>
 
     <!-- FINE SIDEBAR DESTRA -->
