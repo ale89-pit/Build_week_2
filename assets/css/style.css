@@ -6,3 +6,18 @@ html,body{
 #leftSidebar, #rightSidebar, #mainContainer {
     height: 100vh;
 }
+
+
+/* FOOTER */
+
+#footerCard {
+    background-color: transparent;
+    border: none;
+}
+
+#progressBar {
+    height: 4px;
+    border: 10px;
+    width: 100%;
+    background-color: #ccc4;
+}
