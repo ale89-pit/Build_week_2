@@ -74,3 +74,37 @@ const writeSecondRow = function (musicList2) {
     </div>`;
   }
 };
+
+// BARRA DI RICERCA
+// Dichiaro variabile per input di ricerca
+let searchInputReference = document.getElementById("searchIcon");
+let input;
+
+// collego l'evento click alla "button" per l'input search
+searchInputReference.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // piccola animazione per far comparire il campo di input da icona a text input in dissolvenza. . .
+  let inpuText = document.createElement("input");
+  inpuText.style.borderRadius = "30px";
+  inpuText.placeholder = "inserisci testo";
+  inpuText.style.animation = "slideIn 0.5s forwards";
+  inpuText.style.backgroundColor = "black";
+  inpuText.style.border = "none";
+  inpuText.style.transformOrigin = "top right";
+  searchInputReference.replaceWith(inpuText);
+});
+let fadeAnimate = `@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}`;
+
+let inputFade = document.createElement("style");
+inputFade.innerHTML = fadeAnimate;
+document.head.appendChild(inputFade);
