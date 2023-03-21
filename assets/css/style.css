@@ -71,10 +71,17 @@ ul li {
   background: linear-gradient(202deg, rgba(40,39,39,1)  0%,rgba(0,0,0,0.9290091036414566) 79%);
 }
 
+.smallCards{
+  background-color: rgb(44,44,44);
+}
+
 #imgBigCard {
   align-items: stretch;
 }
 
+.sizeTesto{
+  font-size: 0.8em;  
+}
 /* FOOTER */
 
 #footerCard {
