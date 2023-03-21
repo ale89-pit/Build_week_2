@@ -34,3 +34,7 @@ body {
     overflow: scroll;
     scroll-behavior: smooth;
 }
+
+#imgBigCard {
+    align-items: stretch;
+}
