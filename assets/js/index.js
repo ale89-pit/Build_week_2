@@ -1,9 +1,9 @@
 let URLRequest1 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi&type=album";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi";
 let musicList;
 let musicList2;
 let URLRequest2 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza&type=album";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza";
 
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
@@ -76,14 +76,32 @@ const writeSecondRow = function (musicList2) {
 };
 
 let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-let query3 = "salmo&type=album";
+let query3 = "salmo&type=artist";
 
 const getMusic3 = async function () {
   try {
     let response = await fetch(URLRequest3 + query3);
     let musicList3 = await response.json();
+    musicList3 = musicList3.data;
     console.log(musicList3);
+    writeCard3(musicList3);
   } catch {}
 };
+let cardThree = document.getElementById("cardThree");
+const writeCard3 = function (musicList3) {
+  for (let i = 2; i < 8; i++) {
+    cardThree.innerHTML += `<div class="col col-auto d-flex justify-content-center align-items-center">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                        <img src="${musicList3[i].album.cover}" alt="" class="w-100" >
+                                    </div>
+                                    <div class="card-body text-dark w-100 word-wrap">
+                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].title}</h6>
+                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].album.title}</p>
+                                    </div>
 
+                                </div>
+                            </div>`;
+  }
+};
 getMusic3();

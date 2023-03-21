@@ -1,111 +1,121 @@
 html,
 body {
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #leftSidebar,
 #rightSidebar,
 #mainContainer {
-  height: 100vh;
+    height: 100vh;
 }
 
 #mainContainer {
-  background-color: #222222; 
-  color: white;
+    background-color: #222222;
+    color: white;
 }
 
 /* SIDEBAR LEFT */
 
 ul li {
-  line-height: 1.8;
+    line-height: 1.8;
 }
 
 #playlist {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 #playlist a {
-  color: gray;
-  text-decoration: none;
-  line-height: 2.5;
+    color: gray;
+    text-decoration: none;
+    line-height: 2.5;
 }
 
 #playlist a:nth-child(9) {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 #playlist a:nth-child(11) {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 #playlist a:nth-child(17) {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 #miniCard img {
-  width: 3em;
+    width: 3em;
 }
 
 #preference img {
-  width: 100%;
-  aspect-ratio: 3/3;
+    width: 100%;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+
+
 }
 
 #preference .card {
-  height: 150px;
-  width: 100px;
+
+
+    max-width: 100%;
 }
 
 .card-body {
-  width: 100%;
-  padding: 0.3em;
+    width: 100%;
+    padding: 0.3em;
 }
 
 #mainContainer {
-  overflow: scroll;
-  scroll-behavior: smooth;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
-.bigCard{
-  background: rgb(34,34,34);
-  background: linear-gradient(225deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%);
+.bigCard {
+    background: rgb(34, 34, 34);
+    background: linear-gradient(225deg, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
-.smallCards{
-  background-color: rgb(44,44,44);
+.smallCards {
+    background-color: rgb(44, 44, 44);
 }
 
 #imgBigCard {
-  align-items: stretch;
+    align-items: stretch;
 }
 
-.sizeTesto{
-  font-size: 0.8em;  
+.sizeTesto {
+    font-size: 0.65em;
+
 }
+
+.sizeTesto2 {
+    font-size: 0.5em;
+}
+
 /* FOOTER */
 
 #footerCard {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
 
 #progressBar {
-  height: 4px;
-  border: 10px;
-  width: 100%;
-  background-color: #ccc4;
+    height: 4px;
+    border: 10px;
+    width: 100%;
+    background-color: #ccc4;
 }
 
 .timing {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 .mobileMenuIconText {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
