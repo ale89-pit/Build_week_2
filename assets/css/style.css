@@ -13,6 +13,10 @@ body {
 
 /* SIDEBAR LEFT */
 
+ul li {
+  line-height: 1.8;
+}
+
 #playlist {
   font-size: 1em;
 }
