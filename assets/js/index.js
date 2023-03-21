@@ -96,8 +96,8 @@ const writeCard3 = function (musicList3) {
                                         <img src="${musicList3[i].album.cover}" alt="" class="w-100" >
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
-                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].title}</h6>
-                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].album.title}</p>
+                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
+                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p>
                                     </div>
 
                                 </div>
