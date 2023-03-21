@@ -1,10 +1,42 @@
-html,body{
+html,
+body {
     height: 100vh;
     width: 100vw;
 }
 
-#leftSidebar, #rightSidebar, #mainContainer {
+#leftSidebar,
+#rightSidebar,
+#mainContainer {
     height: 100vh;
+}
+
+#miniCard img {
+    width: 3em;
+}
+
+#preference img {
+    width: 100%;
+    aspect-ratio: 3/3;
+}
+
+#preference .card {
+    height: 150px;
+    width: 100px;
+}
+
+.card-body {
+    width: 100%;
+    padding: 0.3em;
+}
+
+#mainContainer {
+
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+#imgBigCard {
+    align-items: stretch;
 }
 
 
