@@ -86,11 +86,13 @@ searchInputReference.addEventListener("click", (e) => {
 
   // piccola animazione per far comparire il campo di input da icona a text input in dissolvenza. . .
   let inpuText = document.createElement("input");
-  inpuText.style.borderRadius = "30px";
   inpuText.placeholder = "inserisci testo";
   inpuText.style.animation = "slideIn 0.5s forwards";
   inpuText.style.backgroundColor = "black";
   inpuText.style.border = "none";
+  inpuText.style.color = "white";
+  inpuText.style.outlineStyle = "none";
+  inpuText.style.borderBottom = "1px solid gray";
   inpuText.style.transformOrigin = "top right";
   searchInputReference.replaceWith(inpuText);
 });
