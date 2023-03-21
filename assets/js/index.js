@@ -23,18 +23,18 @@ const getMusic = async function () {
 
 const writeCard = function (musicList) {
   musicList.forEach((element) => {
-    firstCard.innerHTML = `<div class="row g-0 w-100">
+    firstCard.innerHTML = `<div class="row g-0 w-100 text-bg-dark">
  <div class="col-4">
      <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
  </div>
  <div class="col-8">
      <div class="card-body">
-         <h5 class="card-title text-dark">${element.album.title}</h5>
-         <p class="card-text text-dark">
+         <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
+         <p class="card-text">
          ${element.artist.name}
          </p>
          <p class="card-text">
-             <small class="text-muted">Ascolta la canzone di ${element.artist.name}</small>
+             <small class="opacity-50">Ascolta la canzone di ${element.artist.name}</small>
          </p>
      </div>
  </div>
@@ -59,14 +59,14 @@ getMusic2();
 const writeSecondRow = function (musicList2) {
   for (let i = 0; i < 6; i++) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
-        <div class="card mb-3">
+        <div class="card mb-3 text-bg-dark">
             <div class="row g-0">
                 <div class="col-4">
                     <img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
                         alt="..." />
                 </div>
                 <div class="col-8">
-                    <h5 class="card-title text-dark">${musicList2[i].title}</h5>
+                    <h5 class="card-title">${musicList2[i].title}</h5>
                 </div>
             </div>
 
