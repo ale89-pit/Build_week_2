@@ -22,3 +22,7 @@ html,body{
     width: 100%;
     background-color: #ccc4;
 }
+
+.timing {
+    font-size: 0.8em;
+}

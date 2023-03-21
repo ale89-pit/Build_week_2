@@ -147,12 +147,11 @@
   <!-- DESKTOP FOOTER -->
 
   <footer class="fixed-bottom d-none d-md-block" style="background-color:#222222; color: gray;">
-
     <!-- DIVIDO IL FOOTER IN 3 PARTI -->
     <div class="row row-cols-md-2 row-cols-lg-3 ">
 
       <!-- COLONNA SX: CANZONE + ARTISTA -->
-      <div class="col col-md-3 col-lg-3" id="footerAlbum">
+      <div class="col col-md-4 col-lg-3" id="footerAlbum">
 
         <!-- ALBUM CARD -->
 
@@ -174,7 +173,7 @@
 
       <!-- COLONNA MD: PLAYER -->
 
-      <div class="col col-md-9 col-lg-7 d-flex flex-column" id="footerPlayer">
+      <div class="col col-md-8 col-lg-7 d-flex flex-column" id="footerPlayer">
         <div class="row">
           <div class="col d-flex justify-content-center align-items-center">
             <i class="px-3 bi bi-shuffle"></i>
@@ -186,7 +185,7 @@
         </div>
         <div class="row align-items-center flex-grow-1">
           <div class="col col-1 text-center">
-            <span>0:00</span>
+            <span class="timing">0:00</span>
           </div>
           <div class="col col-10 ">
             <div id="progressBar">
@@ -194,14 +193,14 @@
             </div>
           </div>
           <div class="col col-1 text-center">
-            <span id="songLength">3:00</span>
+            <span class="timing" id="songLength">3:00</span>
           </div>
         </div>
       </div>
 
       <!-- COLONNA DX: ICONE -->
 
-      <div class="col col-lg-2 d-flex justify-content-center align-items-center px-0" id="footerRightIcons">
+      <div class="col col-lg-2 d-flex justify-content-center align-items-center d-none d-lg-flex" id="footerRightIcons">
         <i class="px-1 bi bi-mic"></i>
         <i class="px-1 bi bi-view-list"></i>
         <i class="px-1 bi bi-music-player"></i>
@@ -209,14 +208,50 @@
         <i class="px-1 bi bi-arrows-fullscreen"></i>
       </div>
     </div>
-
-
   </footer>
 
   <!-- FINE DESKTOP FOOTER -->
 
   <!-- MOBILE FOOTER -->
-  
+
+  <footer id="mobileFooter" class="d-md-none fixed-bottom rounded" style="background-color:#222222; color: gray;">
+    <!-- PLAYER: DIVIDO IL FOOTER IN 3 PARTI -->
+    <div class="row row-cols-2">
+
+      <!-- COLONNA SX: CANZONE + ARTISTA -->
+      <div class="col col-7" id="footerAlbum">
+
+        <!-- ALBUM CARD -->
+
+        <div class="card" id="footerCard">
+
+          <div class="row g-0 align-items-center">
+          
+            <!-- ALBUM PHOTO -->
+            <div class="col-4">
+              <img src="http://www.placekitten.com/50" class="img-fluid" alt="...">
+            </div>
+            <div class="col-8">
+              <div class="card-body px-0">
+                <p class="card-title m-0">Song</p>
+                <p class="card-text"><small>Artist</small></p>
+              </div>
+            </div>
+          
+          </div>
+        
+        </div>
+      </div>
+
+      <!-- COLONNA ICONE -->
+
+      <div class="col col-3 d-flex align-items-center" id="footerPlayer">
+        <i class="px-1 bi bi-music-player"></i>
+        <i class="px-1 bi bi-heart"></i>
+        <i class="px-1 bi bi-play-fill"></i>
+      </div>
+    </div>
+  </footer>
   <!-- FINE MOBILE FOOTER -->
 
 
