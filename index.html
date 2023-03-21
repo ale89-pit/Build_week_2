@@ -214,43 +214,73 @@
 
   <!-- MOBILE FOOTER -->
 
-  <footer id="mobileFooter" class="d-md-none fixed-bottom rounded" style="background-color:#222222; color: gray;">
-    <!-- PLAYER: DIVIDO IL FOOTER IN 3 PARTI -->
-    <div class="row row-cols-2">
-
-      <!-- COLONNA SX: CANZONE + ARTISTA -->
-      <div class="col col-7" id="footerAlbum">
-
-        <!-- ALBUM CARD -->
-
-        <div class="card" id="footerCard">
-
-          <div class="row g-0 align-items-center">
-          
-            <!-- ALBUM PHOTO -->
-            <div class="col-4">
-              <img src="http://www.placekitten.com/50" class="img-fluid" alt="...">
-            </div>
-            <div class="col-8">
-              <div class="card-body px-0">
-                <p class="card-title m-0">Song</p>
-                <p class="card-text"><small>Artist</small></p>
+  <footer id="mobileFooter" class="d-md-none fixed-bottom px-2">
+    
+    <div id="mobileFooterContainer"  class="rounded " style="background-color:#262626; color: gray;">
+      <!-- MOBILE PLAYER: DIVIDO IL FOOTER IN 3 PARTI -->
+      
+      <div class="row row-cols-2">
+  
+        <!-- COLONNA SX: CANZONE + ARTISTA -->
+        <div class="col col-7" id="footerAlbum">
+  
+          <!-- ALBUM CARD -->
+  
+          <div class="card" id="footerCard">
+  
+            <div class="row g-0 align-items-center">
+            
+              <!-- ALBUM PHOTO -->
+              <div class="col-4">
+                <img src="http://www.placekitten.com/50" class="img-fluid" alt="...">
               </div>
+              <div class="col-8">
+                <div class="card-body px-0">
+                  <p class="card-title m-0">Song</p>
+                  <p class="card-text"><small>Artist</small></p>
+                </div>
+              </div>
+            
             </div>
           
           </div>
-        
+        </div>
+  
+        <!-- COLONNA ICONE -->
+  
+        <div class="col col-3 d-flex align-items-center" id="footerPlayer">
+          <i class="px-1 fs-1 bi bi-music-player"></i>
+          <i class="px-1 fs-1 bi bi-heart"></i>
+          <i class="px-1 fs-1 bi bi-play-fill"></i>
         </div>
       </div>
+  
+      <!-- FINE MOBILE PLAYER -->
 
-      <!-- COLONNA ICONE -->
-
-      <div class="col col-3 d-flex align-items-center" id="footerPlayer">
-        <i class="px-1 bi bi-music-player"></i>
-        <i class="px-1 bi bi-heart"></i>
-        <i class="px-1 bi bi-play-fill"></i>
-      </div>
     </div>
+
+    <!-- MOBILE MENU -->
+    
+    <div id="mobileMenu" class="d-flex justify-content-center align-items-center">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <i class="px-5 fs-1 bi bi-house-fill"></i>
+        <span class="mobileMenuIconText">Home</span>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <i class="px-5 fs-1 bi bi-search"></i>
+        <span class="mobileMenuIconText">Search</span>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <i class="px-5 fs-1 bi bi-collection"></i>
+        <span class="mobileMenuIconText">Library</span>
+      </div>
+      
+      
+      
+    </div>
+
+    <!-- FINE MOBILE MENU -->
+
   </footer>
   <!-- FINE MOBILE FOOTER -->
 
