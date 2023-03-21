@@ -4,6 +4,7 @@ let musicList;
 let musicList2;
 let URLRequest2 =
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza&type=album";
+
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
 let miniCard = document.getElementById("miniCard");
@@ -73,3 +74,16 @@ const writeSecondRow = function (musicList2) {
     </div>`;
   }
 };
+
+let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+let query3 = "salmo&type=album";
+
+const getMusic3 = async function () {
+  try {
+    let response = await fetch(URLRequest3 + query3);
+    let musicList3 = await response.json();
+    console.log(musicList3);
+  } catch {}
+};
+
+getMusic3();
