@@ -1,14 +1,14 @@
 let URLRequest1 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi&type=album";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi";
 let musicList;
 let musicList2;
 let URLRequest2 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza&type=album";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza";
+
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
 let miniCard = document.getElementById("miniCard");
 
-console.log("ciao");
 const getMusic = async function () {
   try {
     let response = await fetch(URLRequest1);
@@ -23,18 +23,18 @@ const getMusic = async function () {
 
 const writeCard = function (musicList) {
   musicList.forEach((element) => {
-    firstCard.innerHTML = `<div class="row g-0 w-100">
+    firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4">
      <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
  </div>
  <div class="col-8">
      <div class="card-body">
-         <h5 class="card-title text-dark">${element.album.title}</h5>
-         <p class="card-text text-dark">
+         <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
+         <p class="card-text">
          ${element.artist.name}
          </p>
          <p class="card-text">
-             <small class="text-muted">Ascolta la canzone di ${element.artist.name}</small>
+             <small class="opacity-50">Ascolta la canzone di ${element.artist.name}</small>
          </p>
      </div>
  </div>
@@ -59,14 +59,14 @@ getMusic2();
 const writeSecondRow = function (musicList2) {
   for (let i = 0; i < 6; i++) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
-        <div class="card mb-3">
+        <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
                     <img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
                         alt="..." />
                 </div>
-                <div class="col-8">
-                    <h5 class="card-title text-dark">${musicList2[i].title}</h5>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <h5 class="card-title sizeTesto m-0 p-0">${musicList2[i].title}</h5>
                 </div>
             </div>
 
@@ -108,3 +108,34 @@ let fadeAnimate = `@keyframes slideIn {
 let inputFade = document.createElement("style");
 inputFade.innerHTML = fadeAnimate;
 document.head.appendChild(inputFade);
+
+let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+let query3 = "salmo&type=artist";
+
+const getMusic3 = async function () {
+  try {
+    let response = await fetch(URLRequest3 + query3);
+    let musicList3 = await response.json();
+    musicList3 = musicList3.data;
+    console.log(musicList3);
+    writeCard3(musicList3);
+  } catch {}
+};
+let cardThree = document.getElementById("cardThree");
+const writeCard3 = function (musicList3) {
+  for (let i = 2; i < 8; i++) {
+    cardThree.innerHTML += `<div class="col col-auto d-flex justify-content-center align-items-center">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                        <img src="${musicList3[i].album.cover}" alt="" class="w-100" >
+                                    </div>
+                                    <div class="card-body text-dark w-100 word-wrap">
+                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
+                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+};
+getMusic3();
