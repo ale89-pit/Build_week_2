@@ -15,7 +15,18 @@ body {
 }
 
 #preference img {
-    width: 5em;
+    width: 100%;
+    aspect-ratio: 3/3;
+}
+
+#preference .card {
+    height: 150px;
+    width: 100px;
+}
+
+.card-body {
+    width: 100%;
+    padding: 0.3em;
 }
 
 #mainContainer {
