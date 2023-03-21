@@ -12,7 +12,28 @@ body {
 }
 
 /* SIDEBAR LEFT */
+
+#playlist {
+  font-size: 1em;
+}
+
 #playlist a {
   color: gray;
   text-decoration: none;
+  line-height: 2.5;
+}
+
+#playlist a:nth-child(9) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(11) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(17) {
+  display: flex;
+  justify-content: space-between;
 }
