@@ -1,21 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spotify Clone</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify Clone</title>
 
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <!-- ICONE BS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <!-- ICONE BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
 
-  <!-- CSS -->
+    <!-- CSS -->
 
-  <link rel="stylesheet" href="/assets/css/style.css">
-
+    <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
 <body class="container-fluid">
@@ -24,24 +23,289 @@
 
     <!-- SIDEBAR SINISTRA -->
 
-    <div id="leftSidebar" class="col col-3" style="background-color: black; color: gray;">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quas asperiores quia. Id nihil eveniet quis
-        odio sit dolor provident, beatae nemo consequuntur unde cum eos odit, aspernatur accusantium tempora?</p>
-    </div>
+        <div id="leftSidebar" class="col col-3" style="background-color: black; color: gray;">
 
-    <!-- FINE SIDEBAR SINISTRA -->
+            <div id="navBar" class="col mx-5">
 
-    <!-- MAIN CONTAINER -->
+                <!-- three dots icon -->
+                <i class="bi bi-three-dots text-light fs fs-2"></i>
 
-    <div id="mainContainer" class="col" style="background-color: #222222; color: white;">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit asperiores rem quasi deleniti culpa
-        eius inventore expedita rerum optio iusto sed dignissimos ipsum sunt similique labore beatae blanditiis,
-        excepturi in!</p>
-    </div>
+                <!-- Navbar of left SideBar -->
+                <div>
+                    <ul class="list-unstyled">
+                        <!-- Home -->
+                        <li><i class="bi bi-house-door fs fs-3"></i><a class="text-decoration-none text-secondary p-3"
+                                href="">Home</a></li>
+                        <!-- Cerca -->
+                        <li><i class="bi bi-search fs fs-4"></i><a class="text-decoration-none text-secondary p-3"
+                                href="">Cerca</a>
+                        </li>
+                        <!-- La tua libreria -->
+                        <li><i class="bi bi-music-note-list fs fs-4"></i><a
+                                class="text-decoration-none text-secondary p-3" href="">La tua libreria</a></li>
+                    </ul>
+                </div>
 
-    <!-- FINE MAIN CONTAINER -->
+                <!-- Personal task list  -->
+                <div>
+                    <ul class="list-unstyled">
+                        <!-- Crea playlist -->
+                        <li><i class="bi bi-plus-square-fill fs fs-4"></i><a
+                                class="text-decoration-none text-secondary p-3" href="">Crea playlist</a></li>
+                        <!-- Brani che ti piacciono  -->
+                        <li><i class="bi bi-heart-pulse fs fs-4 text-danger"></i><a
+                                class="text-decoration-none text-secondary p-3" href="">Brani che ti piacciono</a>
+                        </li>
+                        <!-- I tuoi episodi -->
+                        <li><i class="bi bi-bookmark fs fs-4 text-success"></i><a
+                                class="text-decoration-none text-secondary p-3" href="">I
+                                tuoi episodi</a></li>
+                    </ul>
+                </div>
 
-    <!-- SIDEBAR DESTRA -->
+
+                <hr>
+
+                <!-- Favourite songs playlist selection -->
+                <div id="playlist" class="row">
+                    <a href="">early stage emily syndrome &lpar;sett-ott 2022&rpar;</a>
+                    <a href="">Be The Young</a>
+                    <a href="">&quot;...&quot; cit. Kimiko &lpar;lug-ago 2022&rpar;</a>
+                    <a href="">saggio vibes 💃⎕🩰</a>
+                    <a href="">main character energy &lpar;mag-giu 2022&rpar;</a>
+                    <a href="">that fucking mood 🔪☠</a>
+                    <a href="">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</a>
+                    <a href="">An Emily Winchester kind of mood 🔪🖕</a>
+                    <a href="">landing page &lpar;mar-apr 2022&rpar;<i class="bi bi-cloud-arrow-down-fill"></i></a>
+                    <a href="">2021 lol</a>
+                    <a href="">cosa cazzo vuol dire questa affermazione &lpar;gen-feb 2022&rpar;<i
+                            class="bi bi-cloud-arrow-down-fill"></i></a>
+                    <a href="">honey and glass &lpar;nov-dic 2022&rpar;</a>
+                    <a href="">&lpar;Revenge&rpar; Training Arc 🦍</a>
+                    <a href="">Lidia 🤝 Emily</a>
+                    <a href="">minecraft e nintendo sqitch &lpar;sep-oct 2022&rpar;</a>
+                    <a href="">silvano d'orba? I hardly know her &lpar;lug - ago 2021&rpar;</a>
+                    <a href="">Culo 2021 <i class="bi bi-people"></i></a>
+                    <a href="">Frah Quintale Mix</a>
+                    <a href="">Francesco Guccini Mix</a>
+                    <a href=""></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINE SIDEBAR SINISTRA -->
+
+        <!-- MAIN CONTAINER -->
+
+        <div id="mainContainer" class="col col-7 mb-5 " style="background-color: #222222; color: white">
+            <div class="container justify-content-center align-items-center">
+                <div class="row ">
+                    <div class="col">
+                        <div class="card m-3">
+                            <div class="row g-0 w-100">
+                                <div class="col-4" id="imgBigCard">
+                                    <img src="https://placekitten.com/300" class="img-fluid rounded-start" alt="..." />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                        <p class="card-text text-dark">
+                                            This is a wider card with supporting text below as a
+                                            natural lead-in to additional content. This content is a
+                                            little bit longer.
+                                        </p>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="miniCard">
+
+                        <h2>Buonasera</h2>
+
+                        <!-- 3 CARD PICCOLE PER RIGA -->
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 CARD PICCOLE PER RIGA -->
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="https://placekitten.com/100" class="img-fluid rounded-start"
+                                            alt="..." />
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Card title</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-around align-items-center" id="preference">
+                        <h4>Altro di ciò che ti piace</h3>
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col col-auto">
+                                <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="https://placekitten.com/200" alt="">
+                                    </div>
+                                    <div class="card-body text-dark">
+                                        <h6 class="mb-0">Miao</h6>
+                                        <p>Provaaaaaaaaaa</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- FINE MAIN CONTAINER -->
+
+        <!-- SIDEBAR DESTRA -->
 
     <!-- <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
     <div class="offcanvas offcanvas-end" style="background-color: black; color: gray;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -156,28 +420,156 @@
       </div>
     </div>
 
-    <!-- FINE SIDEBAR DESTRA -->
+        <!-- FINE SIDEBAR DESTRA -->
+    </div>
 
-  </div>
+    <!-- DESKTOP FOOTER -->
+
+    <footer class="fixed-bottom d-none d-md-block" style="background-color:#222222; color: gray;">
+        <!-- DIVIDO IL FOOTER IN 3 PARTI -->
+        <div class="row row-cols-md-2 row-cols-lg-3 ">
+
+            <!-- COLONNA SX: CANZONE + ARTISTA -->
+            <div class="col col-md-4 col-lg-3" id="footerAlbum">
+
+                <!-- ALBUM CARD -->
+
+                <div class="card" id="footerCard">
+                    <div class="row g-0 align-items-center">
+                        <!-- ALBUM PHOTO -->
+                        <div class="col-4">
+                            <img src="http://www.placekitten.com/80" class="img-fluid" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body px-0">
+                                <p class="card-title m-0">Song</p>
+                                <p class="card-text"><small>Artist</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLONNA MD: PLAYER -->
+
+            <div class="col col-md-8 col-lg-7 d-flex flex-column" id="footerPlayer">
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <i class="px-3 bi bi-shuffle"></i>
+                        <i class="px-3 bi bi-skip-backward-fill"></i>
+                        <i class="px-3 bi bi-play-circle fs-3"></i>
+                        <i class="px-3 bi bi-skip-forward-fill"></i>
+                        <i class="px-3 bi bi-repeat-1"></i>
+                    </div>
+                </div>
+                <div class="row align-items-center flex-grow-1">
+                    <div class="col col-1 text-center">
+                        <span class="timing">0:00</span>
+                    </div>
+                    <div class="col col-10 ">
+                        <div id="progressBar">
+                            <span id="progress"></span>
+                        </div>
+                    </div>
+                    <div class="col col-1 text-center">
+                        <span class="timing" id="songLength">3:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLONNA DX: ICONE -->
+
+            <div class="col col-lg-2 d-flex justify-content-center align-items-center d-none d-lg-flex"
+                id="footerRightIcons">
+                <i class="px-1 bi bi-mic"></i>
+                <i class="px-1 bi bi-view-list"></i>
+                <i class="px-1 bi bi-music-player"></i>
+                <i class="px-1 bi bi-volume-up"></i>
+                <i class="px-1 bi bi-arrows-fullscreen"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FINE DESKTOP FOOTER -->
+
+    <!-- MOBILE FOOTER -->
+
+    <footer id="mobileFooter" class="d-md-none fixed-bottom px-2">
+
+        <div id="mobileFooterContainer" class="rounded " style="background-color:#262626; color: gray;">
+            <!-- MOBILE PLAYER: DIVIDO IL FOOTER IN 3 PARTI -->
+
+            <div class="row row-cols-2">
+
+                <!-- COLONNA SX: CANZONE + ARTISTA -->
+                <div class="col col-7" id="footerAlbum">
+
+                    <!-- ALBUM CARD -->
+
+                    <div class="card" id="footerCard">
+
+                        <div class="row g-0 align-items-center">
+
+                            <!-- ALBUM PHOTO -->
+                            <div class="col-4">
+                                <img src="http://www.placekitten.com/50" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body px-0">
+                                    <p class="card-title m-0">Song</p>
+                                    <p class="card-text"><small>Artist</small></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- COLONNA ICONE -->
+
+                <div class="col col-3 d-flex align-items-center" id="footerPlayer">
+                    <i class="px-1 fs-1 bi bi-music-player"></i>
+                    <i class="px-1 fs-1 bi bi-heart"></i>
+                    <i class="px-1 fs-1 bi bi-play-fill"></i>
+                </div>
+            </div>
+
+            <!-- FINE MOBILE PLAYER -->
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div id="mobileMenu" class="d-flex justify-content-center align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <i class="px-5 fs-1 bi bi-house-fill"></i>
+                <span class="mobileMenuIconText">Home</span>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <i class="px-5 fs-1 bi bi-search"></i>
+                <span class="mobileMenuIconText">Search</span>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <i class="px-5 fs-1 bi bi-collection"></i>
+                <span class="mobileMenuIconText">Library</span>
+            </div>
 
 
 
-  <!-- FOOTER -->
+        </div>
 
-  <footer class="fixed-bottom" style="background-color: black; color: gray;">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem excepturi, quis enim totam doloremque iste
-      labore ipsum debitis reiciendis error consequatur reprehenderit. Pariatur suscipit excepturi ab atque eaque animi!
-    </p>
-  </footer>
+        <!-- FINE MOBILE MENU -->
 
-  <!-- FINE FOOTER -->
+    </footer>
+    <!-- FINE MOBILE FOOTER -->
 
 
-  <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>

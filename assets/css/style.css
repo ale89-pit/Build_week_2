@@ -1,8 +1,93 @@
-html,body{
-    height: 100vh;
-    width: 100vw;
+html,
+body {
+  width: 100vw;
+  height: 100vw;
+  background-color: black;
 }
 
-#leftSidebar, #rightSidebar, #mainContainer {
-    height: 100vh;
+#leftSidebar,
+#rightSidebar,
+#mainContainer {
+  height: 100vh;
+}
+
+/* SIDEBAR LEFT */
+
+ul li {
+  line-height: 1.8;
+}
+
+#playlist {
+  font-size: 1em;
+}
+
+#playlist a {
+  color: gray;
+  text-decoration: none;
+  line-height: 2.5;
+}
+
+#playlist a:nth-child(9) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(11) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(17) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#miniCard img {
+  width: 3em;
+}
+
+#preference img {
+  width: 100%;
+  aspect-ratio: 3/3;
+}
+
+#preference .card {
+  height: 150px;
+  width: 100px;
+}
+
+.card-body {
+  width: 100%;
+  padding: 0.3em;
+}
+
+#mainContainer {
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+#imgBigCard {
+  align-items: stretch;
+}
+
+/* FOOTER */
+
+#footerCard {
+  background-color: transparent;
+  border: none;
+}
+
+#progressBar {
+  height: 4px;
+  border: 10px;
+  width: 100%;
+  background-color: #ccc4;
+}
+
+.timing {
+  font-size: 0.8em;
+}
+
+.mobileMenuIconText {
+  font-size: 0.8em;
 }
