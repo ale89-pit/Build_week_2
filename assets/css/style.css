@@ -12,6 +12,11 @@ body {
   height: 100vh;
 }
 
+#mainContainer {
+  background-color: #222222; 
+  color: white;
+}
+
 /* SIDEBAR LEFT */
 
 ul li {
@@ -68,7 +73,8 @@ ul li {
 }
 
 .bigCard{
-  background: linear-gradient(202deg, rgba(40,39,39,1)  0%,rgba(0,0,0,0.9290091036414566) 79%);
+  background: rgb(34,34,34);
+  background: linear-gradient(225deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 #imgBigCard {
