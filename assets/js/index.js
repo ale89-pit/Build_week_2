@@ -23,7 +23,7 @@ const getMusic = async function () {
 
 const writeCard = function (musicList) {
   musicList.forEach((element) => {
-    firstCard.innerHTML = `<div class="row g-0 w-100 text-bg-dark">
+    firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4">
      <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
  </div>

@@ -67,6 +67,10 @@ ul li {
   scroll-behavior: smooth;
 }
 
+.bigCard{
+  background: linear-gradient(202deg, rgba(40,39,39,1)  0%,rgba(0,0,0,0.9290091036414566) 79%);
+}
+
 #imgBigCard {
   align-items: stretch;
 }
