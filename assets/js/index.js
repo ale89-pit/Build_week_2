@@ -82,7 +82,7 @@ const writeSecondRow = function (musicList2) {
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="${musicList2[i].album.cover_medium}" class=" rounded-start"
+                    <img src="${musicList2[i].album.cover}" class=" rounded-start"
                         alt="..." />
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
@@ -116,11 +116,11 @@ const getMusic3 = async function () {
 };
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
-  for (let i = 2; i < 8; i++) {
-    cardThree.innerHTML += `<div class="col d-flex justify-content-center align-items-center">
+  for (let i = 2; i < 7; i++) {
+    cardThree.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicList3[i].album.cover}" alt="" class="img-fluid" >
+                                        <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" >
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
                                         <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>

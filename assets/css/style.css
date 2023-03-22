@@ -5,6 +5,7 @@ body {
     background-color: black;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    font-size: 0.9em;
 }
 
 #leftSidebar,
@@ -68,24 +69,25 @@ ul li {
 }
 
 #miniCard img {
-    width: 100%;
+    width: 80px;
 }
 
 #preference img {
-    width: 100%;
-    aspect-ratio: 3/3;
-    object-fit: cover;
+    width: 170px;
+    aspect-ratio: 1/2;
+
 
 
 }
 
 #preference .card {
-    max-width: 100%;
+    width: 140px;
 }
 
 .card-body {
     width: 100%;
     padding: 0.3em;
+    line-break: auto;
 }
 
 #mainContainer,
@@ -97,8 +99,8 @@ ul li {
 }
 
 .bigCard {
-    background: rgb(34, 34, 34);
-    background: linear-gradient(225deg, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 84%);
 }
 
 .smallCards {
@@ -115,7 +117,7 @@ ul li {
 }
 
 .sizeTesto2 {
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 
 /* FOOTER */
