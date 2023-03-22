@@ -29,10 +29,9 @@ const writeCard2 = function (choose) {
   });
   choose.forEach((element) => {
     if (element.album.title == choose.album.title) {
-        songsList.innerHTML += `<li>${element.title}</li>` 
+      songsList.innerHTML += `<li>${element.title}</li>`;
     }
-
-  })
+  });
 };
 
 const shownAlbum = async function () {
