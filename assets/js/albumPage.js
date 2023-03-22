@@ -14,12 +14,12 @@ console.log(coloredBack);
 
 const writeCard2 = function (tracklist) {
   tracklist.forEach((element) => {
-    firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
+    firstCard.innerHTML = `<div class="row g-0 w-100 text-light">
    <div class="col-4">
     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
     </a>  
    </div>
-   <div class="col-8">
+   <div class="col-8 noSfo">
        <div class="card-body">
         <p> ALBUM <p>
            <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>

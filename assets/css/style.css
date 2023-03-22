@@ -141,11 +141,14 @@ ul li {
 .heroBg {
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
   }
 
 .albumCard {
     background-color: #222222;
+}
+
+.noSfo  {
+    background: transparent;
 }
 
 .artistName, .albumName {
