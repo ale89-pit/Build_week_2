@@ -356,12 +356,12 @@
               <div class="card" id="footerCard">
                   <div class="row g-0 align-items-center">
                       <!-- ALBUM PHOTO -->
-                      <div class="col-4">
-                          <img src="http://www.placekitten.com/80" class="img-fluid" alt="...">
+                      <div class="col-3">
+                        <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px" id="playerSongCover">
                       </div>
-                      <div class="col-8">
-                          <div class="card-body px-0">
-                              <p class="card-title m-0">Song</p>
+                      <div class="col-9">
+                          <div class="card-body px-0 text-light">
+                              <p class="card-title m-0 fw-bold">Song</p>
                               <p class="card-text"><small>Artist</small></p>
                           </div>
                       </div>
@@ -376,7 +376,7 @@
                   <div class="col d-flex justify-content-center align-items-center">
                       <i class="greenIcon px-3 bi bi-shuffle"></i>
                       <i class="px-3 bi bi-skip-backward-fill"></i>
-                      <i class="bi bi-play-circle-fill fs-2 text-light"></i>
+                      <i class="bi bi-play-circle-fill fs-2 text-light" id="playButton"></i>
                       <i class="px-3 bi bi-skip-forward-fill"></i>
                       <i class="greenIcon px-3 bi bi-repeat-1"></i>
                   </div>
@@ -412,6 +412,7 @@
 
   <!-- FINE DESKTOP FOOTER -->
 
+
   <!-- MOBILE FOOTER -->
 
   <footer id="mobileFooter" class="d-md-none fixed-bottom">
@@ -432,7 +433,65 @@
 
                           <!-- ALBUM PHOTO -->
                           <div class="col-3">
-                              <img src="http://www.placekitten.com/50" class="img-fluid rounded-start" alt="...">
+                              <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-9">
+                              <div class="card-body p-0 text-light">
+                                  <p class="card-title m-0 fw-bold" id="mobilePlayerSongTitle">Song</p>
+                              </div>
+                          </div>
+
+                      </div>
+
+                  </div>
+              </div>
+
+              <!-- COLONNA ICONE -->
+
+              <div class="col col-5 d-flex align-items-center justify-content-between px-4" id="footerPlayer">
+                  <i class="fs-1 bi bi-music-player"></i>
+                  <i class="fs-1 bi bi-heart text-light"></i>
+                  <i class="fs-1 bi bi-play-fill text-light"></i>
+              </div>
+          </div>
+
+          <!-- FINE MOBILE PLAYER -->
+
+      </div>
+
+      <!-- MOBILE MENU -->
+
+      <div id="mobileMenu" class="d-flex justify-content-center align-items-center text-light">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+              <i class="px-5 fs-1 bi bi-house-fill "></i>
+              <a href="index.html" class="text-decoration-none"><span class="mobileMenuIconText">Home</span></a>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+              <i class="px-5 fs-1 bi bi-search"></i>
+              <span class="mobileMenuIconText">Search</span>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+    <!-- MOBILE FOOTER -->
+
+    <footer id="mobileFooter" class="d-md-none fixed-bottom">
+
+      <div id="mobileFooterContainer" class="rounded my-2" style="background-color:#262626; color: gray;">
+          <!-- MOBILE PLAYER: DIVIDO IL FOOTER IN 3 PARTI -->
+
+          <div class="row row-cols-2 px-2">
+
+              <!-- COLONNA SX: CANZONE + ARTISTA -->
+              <div class="col col-7 p-0" id="footerAlbum">
+
+                  <!-- ALBUM CARD -->
+
+                  <div class="card" id="footerCard">
+
+                      <div class="row g-0 align-items-center">
+
+                          <!-- ALBUM PHOTO -->
+                          <div class="col-3">
+                              <img src="http://www.placekitten.com/50" id="mobilePlayerCover" class="img-fluid rounded-start" width="50px">
                           </div>
                           <div class="col-9">
                               <div class="card-body p-0 text-light">

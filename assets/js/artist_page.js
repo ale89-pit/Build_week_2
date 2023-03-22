@@ -8,11 +8,13 @@ console.log('artistId', artistId);
 
 let playButton = document.getElementById('playButton');
 
-playButton.onclick = () => {
+playButton.addEventListener('click', function(){
+
     var audio = new Audio("https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3");
     // Riproduci il suono
     audio.play();
-}
+})
+
 
 let showSongInPlayer = async (songId) => {
 
