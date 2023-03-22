@@ -297,12 +297,12 @@
                 <div class="card" id="footerCard">
                     <div class="row g-0 align-items-center">
                         <!-- ALBUM PHOTO -->
-                        <div class="col-4">
-                            <img src="http://www.placekitten.com/80" class="img-fluid" alt="...">
+                        <div class="col-3">
+                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px" id="playerSongCover">
                         </div>
-                        <div class="col-8">
-                            <div class="card-body px-0">
-                                <p class="card-title m-0">Song</p>
+                        <div class="col-9">
+                            <div class="card-body px-0 text-light">
+                                <p class="card-title m-0 fw-bold">Song</p>
                                 <p class="card-text"><small>Artist</small></p>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
                     <div class="col d-flex justify-content-center align-items-center">
                         <i class="greenIcon px-3 bi bi-shuffle"></i>
                         <i class="px-3 bi bi-skip-backward-fill"></i>
-                        <i class="bi bi-play-circle-fill fs-2 text-light"></i>
+                        <i class="bi bi-play-circle-fill fs-2 text-light" id="playButton"></i>
                         <i class="px-3 bi bi-skip-forward-fill"></i>
                         <i class="greenIcon px-3 bi bi-repeat-1"></i>
                     </div>
@@ -373,11 +373,11 @@
 
                             <!-- ALBUM PHOTO -->
                             <div class="col-3">
-                                <img src="http://www.placekitten.com/50" class="img-fluid rounded-start" alt="...">
+                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover" class="img-fluid rounded-start" width="50px">
                             </div>
                             <div class="col-9">
                                 <div class="card-body p-0 text-light">
-                                    <p class="card-title m-0 fw-bold">Song</p>
+                                    <p class="card-title m-0 fw-bold" id="mobilePlayerSongTitle">Song</p>
                                 </div>
                             </div>
 
@@ -422,6 +422,7 @@
         <!-- FINE MOBILE MENU -->
 
     </footer>
+
     <!-- FINE MOBILE FOOTER -->
 
 
