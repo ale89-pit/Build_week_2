@@ -10,6 +10,7 @@ let songsList = document.querySelector(".songsList");
 let coloredBack = document.getElementsByClassName("hero");
 let heroBg = document.querySelector(".heroBg");
 
+
 console.log(coloredBack);
 
 const writeCard2 = function (tracklist) {
@@ -32,12 +33,42 @@ const writeCard2 = function (tracklist) {
 
     heroBg.style.backgroundImage = `url(${element.album.cover_medium})`;
   });
-  tracklist.forEach((element) => {
+
+  tracklist.forEach((element, index) => {
+    let minutes = Math.floor(element.duration / 60);
+    let seconds = element.duration % 60;
+    let duration = `${minutes}:${seconds}`;
     if (element.album.title == queryAlbum) {
-      songsList.innerHTML += `<li>${element.title}</li>`;
+      songsList.innerHTML += `
+      <div class="row align-items-center my-3">
+                        <div class="col d-flex align-items-center flex-grow-1">
+                            <span class="mx-3">${index+1}</span>
+                            <div class="card artistSongCard">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-2">
+                                        <img src="${element.album.cover_big}" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="card-body py-0">
+                                            <p class="card-text m-0 songTitle">${element.title}</p>
+                                            <span class="streams d-md-none">34.356.743</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4 d-none d-md-block">
+                            <span class="streams">34.356.743</span>
+                        </div>
+                        <div class="col col-2 d-none d-md-block">
+                            <span class="streams">${duration}</span>
+                        </div>
+                    </div>`;
     }
   });
 };
+
+
 
 const shownAlbum = async function () {
   let response = await fetch(URLRequest + idRef);
