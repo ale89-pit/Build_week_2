@@ -9,7 +9,9 @@ console.log('artistId', artistId);
 
 let showSongs = (firstFiveSongs) => {
     let songCol = document.getElementById('songCol');
+    let colDx = document.getElementById('colDx');
     let i = 1;
+    
     firstFiveSongs.forEach((song) => {
         // 👇️ get the number of full minutes
         let minutes = Math.floor(song.duration / 60);
@@ -27,12 +29,12 @@ let showSongs = (firstFiveSongs) => {
                             <span class="mx-3">${i}</span>
                             <div class="card artistSongCard">
                                 <div class="row g-0 align-items-center">
-                                    <div class="col-4">
+                                    <div class="col-2">
                                         <img src="${song.album.cover}" class="img-fluid" alt="...">
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-10">
                                         <div class="card-body py-0">
-                                            <p class="card-text m-0">${song.title}</p>
+                                            <p class="card-text m-0 songTitle">${song.title}</p>
                                             <span class="streams d-md-none">34.356.743</span>
                                         </div>
                                     </div>
@@ -46,10 +48,25 @@ let showSongs = (firstFiveSongs) => {
                             <span class="streams">${duration}</span>
                         </div>
                     </div>
+        <!-- FINE CANZONE -->
         `
         i++;
     });
     songCol.innerHTML += `<p class="text-secondary">VISUALIZZA ALTRO</p>`;
+
+    colDx.innerHTML += `<div class="card artistSongCard">
+    <div class="row g-0 align-items-center">
+        <div class="col-4">
+            <img src="https://api.deezer.com/artist/${firstFiveSongs[0].artist.id}/image" class="img-fluid rounded-circle" width="70px">
+        </div>
+        <div class="col-8">
+            <div class="card-body p-0">
+                <p class="card-title m-0"><small>Hai messo mi piace a 11 brani</small> </p>
+                <p class="card-text m-0 text-secondary"><small>di ${firstFiveSongs[0].artist.name}</small></p>
+            </div>
+        </div>
+    </div>
+</div>`;
 }
 
 let showArtistTracklist = async (artistTracklist) => {
@@ -83,6 +100,9 @@ let findArtist = async () => {
             let artistTracklist = artist.tracklist;
             console.log('artistTracklist:', artistTracklist);
             showArtistTracklist(artistTracklist);
+
+            let artistName = document.getElementsByClassName('artistName')[0];
+            artistName.innerHTML = artist.name;
         }
         else {
             return new Error('Errore!', response.status);
