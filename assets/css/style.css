@@ -15,6 +15,7 @@ body {
 #mainContainer {
     background-color: #222222;
     color: white;
+    padding: 0;
 }
 
 
@@ -38,7 +39,7 @@ ul li {
 }
 
 #playlist {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #playlist a {
@@ -135,11 +136,16 @@ ul li {
 
 .hero {
     height: 350px;
-    border: 1px solid white;
 }
 
-#heroAlbum {
-    bottom: 0;
+.heroBg {
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+  }
+
+.albumCard {
+    background-color: #222222;
 }
 
 .artistName, .albumName {
