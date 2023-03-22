@@ -147,6 +147,10 @@ ul li {
     background-color: #222222;
 }
 
+.noSfo  {
+    background: transparent;
+}
+
 .artistName, .albumName {
     font-size: 4rem;
     font-weight: bolder;
