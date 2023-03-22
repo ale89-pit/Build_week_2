@@ -134,6 +134,8 @@ ul li {
     font-size: 0.8em;
 }
 
+/* ARTIST PAGE */
+
 .hero {
     height: 350px;
 }
@@ -145,6 +147,15 @@ ul li {
 
 .albumCard {
     background-color: #222222;
+    border: 1px solid red;
+}
+
+.bi-patch-check-fill {
+    color: blue;
+}
+
+#heroArtist {
+    bottom: 0;
 }
 
 .noSfo  {
@@ -162,4 +173,22 @@ ul li {
         font-size: 2.5rem;
     }
 
+}
+
+.playButtonGreen {
+    color: green;
+    font-size: 2.5em;
+}
+
+.artistSongCard {
+    background-color: transparent;
+    border: none;
+}
+
+.streams {
+    font-size: 0.8rem;
+}
+
+.songTitle {
+    font-size: 0.8rem;
 }
