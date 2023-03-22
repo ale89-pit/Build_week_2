@@ -16,8 +16,8 @@ body {
 }
 
 #mainContainer {
-    background: rgb(0,0,0);
-background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 70%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(360deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 70%);
     color: white;
     padding: 0;
 }
@@ -140,6 +140,83 @@ ul li {
     font-size: 0.8em;
 }
 
+#mobileFooter {
+    background: rgb(50,50,50);
+    background: linear-gradient(180deg, rgba(50,50,50,0) 0%, rgba(0,0,0,1) 98%);
+}
+
+#mobileFooterContainer {
+    width: 95%;
+    margin: auto;
+}
+
+.greenIcon {
+    color: green;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 19.5rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #c2c2c2;
+    border-radius: 0.5rem;
+    height: 0.3rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -1.6px;
+    /* Centers thumb on the track */
+    background-color: #ededed;
+    border-radius: 1rem;
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #ededed;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #c2c2c2;
+    border-radius: 0.5rem;
+    height: 0.3rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #ededed;
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 1rem;
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #ededed;
+    outline-offset: 0.125rem;
+}
+
 /* ARTIST PAGE */
 
 .hero {
@@ -149,7 +226,7 @@ ul li {
 .heroBg {
     background-size: cover;
     background-position: center;
-  }
+}
 
 .albumCard {
     background-color: #222222;
@@ -164,18 +241,20 @@ ul li {
     bottom: 0;
 }
 
-.noSfo  {
+.noSfo {
     background: transparent;
 }
 
-.artistName, .albumName {
+.artistName,
+.albumName {
     font-size: 4rem;
     font-weight: bolder;
 }
 
 @media screen and (max-width:576px) {
 
-    .artistName, .albumName {
+    .artistName,
+    .albumName {
         font-size: 2.5rem;
     }
 
