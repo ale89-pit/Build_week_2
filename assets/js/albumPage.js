@@ -1,4 +1,4 @@
-let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 let idRef = new URLSearchParams(window.location.search).get("id");
 let queryRef = new URLSearchParams(window.location.search).get("queryREF");
@@ -8,8 +8,8 @@ console.log(queryRef);
 let firstCard = document.querySelector("#heroAlbum .card");
 let songsList = document.querySelector(".songsList");
 
-const writeCard2 = function (choose) {
-  choose.forEach((element) => {
+const writeCard2 = function (tracklist) {
+  tracklist.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
    <div class="col-4">
     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
@@ -28,7 +28,7 @@ const writeCard2 = function (choose) {
    </div>
   </div>`;
   });
-  choose.forEach((element) => {
+  tracklist.forEach((element) => {
     if (element.album.title == queryAlbum) {
       songsList.innerHTML += `<li>${element.title}</li>`;
     }
@@ -36,12 +36,18 @@ const writeCard2 = function (choose) {
 };
 
 const shownAlbum = async function () {
-  let response = await fetch(URLRequest + queryRef + "/" + queryAlbum);
+  let response = await fetch(URLRequest + idRef);
   let choose = await response.json();
-  console.log(choose);
-  choose = choose.data;
-  console.log(choose[0].album.tracklist);
-  writeCard2(choose);
+  console.log("choose", choose);
+
+  let tracklist = choose.tracks.data;
+  writeCard2(tracklist);
+  console.log("Tracklist", tracklist);
 };
 
+// const listTrack = async function (tracklist) {
+//   let listTrack2 = await fetch(tracklist);
+//   console.log("listTrack", listTrack);
+//   let response = await listTrack2.json();
+// };
 shownAlbum();
