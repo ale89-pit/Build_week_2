@@ -16,7 +16,8 @@ body {
 }
 
 #mainContainer {
-    background-color: #222222;
+    background: rgb(0,0,0);
+background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 70%);
     color: white;
     padding: 0;
 }
