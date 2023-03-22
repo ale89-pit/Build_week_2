@@ -64,7 +64,7 @@ ul li {
 }
 
 #miniCard img {
-    width: 3em;
+    width: 100%;
 }
 
 #preference img {
@@ -104,7 +104,7 @@ ul li {
 }
 
 .sizeTesto {
-    font-size: 0.65em;
+    font-size: 0.8em;
 
 }
 
