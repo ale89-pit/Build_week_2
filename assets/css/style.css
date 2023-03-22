@@ -15,6 +15,7 @@ body {
 #mainContainer {
     background-color: #222222;
     color: white;
+    padding: 0;
 }
 
 
@@ -38,7 +39,7 @@ ul li {
 }
 
 #playlist {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #playlist a {
@@ -75,8 +76,6 @@ ul li {
 }
 
 #preference .card {
-
-
     max-width: 100%;
 }
 
@@ -133,4 +132,63 @@ ul li {
 
 .mobileMenuIconText {
     font-size: 0.8em;
+}
+
+/* ARTIST PAGE */
+
+.hero {
+    height: 350px;
+}
+
+.heroBg {
+    background-size: cover;
+    background-position: center;
+  }
+
+.albumCard {
+    background-color: #222222;
+    border: 1px solid red;
+}
+
+.bi-patch-check-fill {
+    color: blue;
+}
+
+#heroArtist {
+    bottom: 0;
+}
+
+.noSfo  {
+    background: transparent;
+}
+
+.artistName, .albumName {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+@media screen and (max-width:576px) {
+
+    .artistName, .albumName {
+        font-size: 2.5rem;
+    }
+
+}
+
+.playButtonGreen {
+    color: green;
+    font-size: 2.5em;
+}
+
+.artistSongCard {
+    background-color: transparent;
+    border: none;
+}
+
+.streams {
+    font-size: 0.8rem;
+}
+
+.songTitle {
+    font-size: 0.8rem;
 }
