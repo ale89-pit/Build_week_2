@@ -11,7 +11,7 @@ let showSongs = (firstFiveSongs) => {
     let songCol = document.getElementById('songCol');
     let colDx = document.getElementById('colDx');
     let i = 1;
-    
+
     firstFiveSongs.forEach((song) => {
         // 👇️ get the number of full minutes
         let minutes = Math.floor(song.duration / 60);
@@ -89,6 +89,16 @@ let showArtistTracklist = async (artistTracklist) => {
     }
 }
 
+let showArtist = (artist) => {
+    let artistName = document.getElementsByClassName('artistName')[0];
+    artistName.innerHTML = artist.name;
+    let artistBgImageUrl = artist.picture_xl;
+    console.log('background hero:', artistBgImageUrl);
+    let heroBackground = document.getElementsByClassName('hero')[0];    
+    // heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + ')';
+    // heroBackground.style.backgroundSize = "cover";
+    heroBackground.style.background = "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('+artistBgImageUrl+')";
+
 let findArtist = async () => {
     try {
         let response = await fetch(URLRequest + artistId);
@@ -99,10 +109,8 @@ let findArtist = async () => {
             console.log('Artist:', artist.name);
             let artistTracklist = artist.tracklist;
             console.log('artistTracklist:', artistTracklist);
+            showArtist(artist);
             showArtistTracklist(artistTracklist);
-
-            let artistName = document.getElementsByClassName('artistName')[0];
-            artistName.innerHTML = artist.name;
         }
         else {
             return new Error('Errore!', response.status);

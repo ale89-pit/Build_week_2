@@ -138,6 +138,7 @@ ul li {
 .hero {
     height: 350px;
     border: 1px solid red;
+    /* background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)); */
 }
 
 .bi-patch-check-fill {
