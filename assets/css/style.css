@@ -133,3 +133,9 @@ ul li {
 .mobileMenuIconText {
     font-size: 0.8em;
 }
+
+/* ARTIST PAGE */
+
+.hero {
+    height: 500px;
+}
