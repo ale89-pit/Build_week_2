@@ -30,7 +30,7 @@ let showSongs = (firstFiveSongs) => {
                             <div class="card artistSongCard">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="${song.album.cover}" class="img-fluid" alt="...">
+                                        <img src="${song.album.cover_big}" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-10">
                                         <div class="card-body py-0">
@@ -95,9 +95,13 @@ let showArtist = (artist) => {
     let artistBgImageUrl = artist.picture_xl;
     console.log('background hero:', artistBgImageUrl);
     let heroBackground = document.getElementsByClassName('hero')[0];    
+    console.log(heroBackground);
     // heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + ')';
-    // heroBackground.style.backgroundSize = "cover";
-    heroBackground.style.background = "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('+artistBgImageUrl+')";
+    heroBackground.style.backgroundSize = "cover";
+    heroBackground.style.backgroundRepeat = "no-repeat"
+    heroBackground.style.backgroundImage = 'url('+artistBgImageUrl+'), linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5))';
+
+}
 
 let findArtist = async () => {
     try {
