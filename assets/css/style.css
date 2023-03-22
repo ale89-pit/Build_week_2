@@ -137,5 +137,19 @@ ul li {
 /* ARTIST PAGE */
 
 .hero {
-    height: 500px;
+    height: 350px;
+    border: 1px solid red;
+}
+
+.bi-patch-check-fill {
+    color: blue;
+}
+
+#heroArtist {
+    bottom: 0;
+}
+
+.artistName, .albumName {
+    font-size: 4rem;
+    font-weight: bolder;
 }
