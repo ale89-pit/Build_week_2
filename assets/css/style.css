@@ -4,12 +4,15 @@ body {
     height: 100vh;
     background-color: black;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 #leftSidebar,
 #rightSidebar,
 #mainContainer {
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 #mainContainer {
@@ -86,8 +89,10 @@ ul li {
 
 #mainContainer,
 #leftSidebar {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
+    max-width: 100%;
 }
 
 .bigCard {
