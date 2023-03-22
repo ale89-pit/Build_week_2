@@ -36,6 +36,7 @@ const writeCard = function (musicList, query1) {
  <div class="col-4 ps-0">
  <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">
      <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
+  </a>   
  </div>
  <div class="col-8">
      <div class="card-body">
