@@ -10,7 +10,7 @@ let songsList = document.querySelector(".songsList");
 
 const writeCard2 = function (choose) {
   choose.forEach((element) => {
-    firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
+    firstCard.innerHTML = `<div class="row g-0 w-100 text-light albumCard">
    <div class="col-4">
     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
     </a>  
