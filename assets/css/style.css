@@ -97,8 +97,8 @@ ul li {
 }
 
 .bigCard {
-    background: rgb(34, 34, 34);
-    background: linear-gradient(225deg, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(10deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 84%);
 }
 
 .smallCards {
