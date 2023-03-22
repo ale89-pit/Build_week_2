@@ -1,9 +1,11 @@
-let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+let URLRequest =
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 let musicList;
-let query1 = "Pinguini Tattici Nucleari";
+let query1 = "Marracash";
 let query2 = "Lazza";
 let musicList2;
+
 
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
