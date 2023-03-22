@@ -36,11 +36,11 @@ const writeCard2 = function (choose) {
 };
 
 const shownAlbum = async function () {
-  let response = await fetch(URLRequest + queryRef);
+  let response = await fetch(URLRequest + queryRef + "/" + queryAlbum);
   let choose = await response.json();
   console.log(choose);
   choose = choose.data;
-  console.log(choose);
+  console.log(choose[0].album.tracklist);
   writeCard2(choose);
 };
 

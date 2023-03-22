@@ -1,7 +1,7 @@
 let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 let musicList;
-let query1 = "Marracash";
+let query1 = "Pinguini Tattici Nucleari";
 let query2 = "Lazza";
 let musicList2;
 
