@@ -6,11 +6,19 @@ let artistId = new URLSearchParams(window.location.search).get('artistId');
 
 console.log('artistId', artistId);
 
+let playButton = document.getElementById('playButton');
+
+playButton.onclick = () => {
+    var audio = new Audio("https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3");
+    // Riproduci il suono
+    audio.play();
+}
+
 let showSongInPlayer = async (songId) => {
 
-    try{
+    try {
         let response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/track/' + songId);
-        if(response.ok){
+        if (response.ok) {
             let song = await response.json();
             console.log('canzone:', song);
             let cover = document.getElementById('playerSongCover');
@@ -30,11 +38,11 @@ let showSongInPlayer = async (songId) => {
             mobileCover.setAttribute('src', song.album.cover);
             mobileTitle.innerText = song.title;
         }
-        else{
-            return new Error ('errore nella fetch', response.status);
+        else {
+            return new Error('errore nella fetch', response.status);
         }
     }
-    catch(error){
+    catch (error) {
         console.log(error);
     }
 
@@ -128,12 +136,12 @@ let showArtist = (artist) => {
     artistName.innerHTML = artist.name;
     let artistBgImageUrl = artist.picture_xl;
     console.log('background hero:', artistBgImageUrl);
-    let heroBackground = document.getElementsByClassName('hero')[0];    
+    let heroBackground = document.getElementsByClassName('hero')[0];
     console.log(heroBackground);
     // heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + ')';
     heroBackground.style.backgroundSize = "cover";
     heroBackground.style.backgroundRepeat = "no-repeat"
-    heroBackground.style.backgroundImage = 'url('+artistBgImageUrl+'), linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5))';
+    heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + '), linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5))';
 
 }
 
