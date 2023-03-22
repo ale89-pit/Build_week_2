@@ -2,7 +2,7 @@ let URLRequest =
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 let musicList;
-let query1 = "vasco%20rossi";
+let query1 = "Marracash";
 let query2 = "Lazza";
 let musicList2;
 
@@ -27,7 +27,7 @@ const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4">
-  <a href="albumPage.html?id=${element.id}&queryREF=${query1}">
+  <a href="albumPage.html?id=${element.id}&queryREF=${query1}&album=${element.album.title}">
   <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
   </a>  
  </div>
