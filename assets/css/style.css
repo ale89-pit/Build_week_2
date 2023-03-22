@@ -17,16 +17,20 @@ body {
     color: white;
 }
 
-/* width */
+
+/*
+/* Larghezza */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(146, 146, 146); 
-  }
-  
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100);
+
+}
+
 /* SIDEBAR LEFT */
 
 ul li {
@@ -81,7 +85,8 @@ ul li {
     padding: 0.3em;
 }
 
-#mainContainer, #leftSidebar {
+#mainContainer,
+#leftSidebar {
     overflow: scroll;
     scroll-behavior: smooth;
 }
