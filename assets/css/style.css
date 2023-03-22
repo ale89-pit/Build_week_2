@@ -166,3 +166,12 @@ ul li {
     color: green;
     font-size: 2.5em;
 }
+
+.artistSongCard {
+    background-color: transparent;
+    border: none;
+}
+
+.streams {
+    font-size: 0.8rem;
+}
