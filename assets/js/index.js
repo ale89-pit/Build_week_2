@@ -34,6 +34,7 @@ const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4 ps-0">
+ <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">
      <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
  </div>
  <div class="col-8">
