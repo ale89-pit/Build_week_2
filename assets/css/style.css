@@ -22,15 +22,15 @@ body {
 /* Larghezza */
 ::-webkit-scrollbar {
     width: 10px;
-    
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(100, 100, 100); 
 
-  }
-  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100);
+
+}
+
 /* SIDEBAR LEFT */
 
 ul li {
@@ -75,8 +75,6 @@ ul li {
 }
 
 #preference .card {
-
-
     max-width: 100%;
 }
 
@@ -85,7 +83,8 @@ ul li {
     padding: 0.3em;
 }
 
-#mainContainer, #leftSidebar {
+#mainContainer,
+#leftSidebar {
     overflow: scroll;
     scroll-behavior: smooth;
 }

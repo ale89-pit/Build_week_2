@@ -1,9 +1,11 @@
-let URLRequest1 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi";
+let URLRequest =
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
 let musicList;
+let query1 = "vasco%20rossi";
+let query2 = "Lazza";
 let musicList2;
-let URLRequest2 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza";
+
 
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
@@ -11,21 +13,23 @@ let miniCard = document.getElementById("miniCard");
 
 const getMusic = async function () {
   try {
-    let response = await fetch(URLRequest1);
+    let response = await fetch(URLRequest + query1);
     musicList = await response.json();
     console.log(musicList);
     musicList = musicList.data;
 
     console.log(musicList);
-    writeCard(musicList);
+    writeCard(musicList, query1);
   } catch {}
 };
 
-const writeCard = function (musicList) {
+const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4">
-     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
+  <a href="albumPage.html?id=${element.id}&queryREF=${query1}">
+  <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
+  </a>  
  </div>
  <div class="col-8">
      <div class="card-body">
@@ -45,7 +49,7 @@ const writeCard = function (musicList) {
 getMusic();
 const getMusic2 = async function () {
   try {
-    let response = await fetch(URLRequest2);
+    let response = await fetch(URLRequest + query2);
     musicList2 = await response.json();
     console.log(musicList2);
     musicList2 = musicList2.data;
@@ -61,11 +65,11 @@ const writeSecondRow = function (musicList2) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
-                <div class="col-4">
-                    <img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
+                <div class="col-3">
+                    <img src="${musicList2[i].album.cover_medium}" class="img-fluid rounded-start"
                         alt="..." />
                 </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
+                <div class="col-9 d-flex justify-content-start align-items-center">
                     <h5 class="card-title sizeTesto m-0 p-0">${musicList2[i].title}</h5>
                 </div>
             </div>
@@ -75,12 +79,11 @@ const writeSecondRow = function (musicList2) {
   }
 };
 
-let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let query3 = "salmo&type=artist";
 
 const getMusic3 = async function () {
   try {
-    let response = await fetch(URLRequest3 + query3);
+    let response = await fetch(URLRequest + query3);
     let musicList3 = await response.json();
     musicList3 = musicList3.data;
     console.log(musicList3);
@@ -90,10 +93,10 @@ const getMusic3 = async function () {
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
   for (let i = 2; i < 8; i++) {
-    cardThree.innerHTML += `<div class="col col-auto d-flex justify-content-center align-items-center">
+    cardThree.innerHTML += `<div class="col  d-flex justify-content-center align-items-center">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicList3[i].album.cover}" alt="" class="w-100" >
+                                        <img src="${musicList3[i].album.cover}" alt="" class=" img-fluid" >
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
                                         <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
