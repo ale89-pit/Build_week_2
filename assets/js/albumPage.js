@@ -2,6 +2,7 @@ let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 let idRef = new URLSearchParams(window.location.search).get("id");
 let queryRef = new URLSearchParams(window.location.search).get("queryREF");
+let queryAlbum = new URLSearchParams(window.location.search).get("album");
 console.log(queryRef);
 
 let firstCard = document.querySelector("#heroAlbum .card");
@@ -28,7 +29,7 @@ const writeCard2 = function (choose) {
   </div>`;
   });
   choose.forEach((element) => {
-    if (element.album.title == choose.album.title) {
+    if (element.album.title == queryAlbum) {
       songsList.innerHTML += `<li>${element.title}</li>`;
     }
   });
