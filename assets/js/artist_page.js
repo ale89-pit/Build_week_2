@@ -16,10 +16,19 @@ let showSongInPlayer = async (songId) => {
             let cover = document.getElementById('playerSongCover');
             let title = document.getElementById('playerSongTitle');
             let artist = document.getElementById('playerSongArtist');
+            let length = document.getElementById('songLength');
             cover.removeAttribute('src');
             cover.setAttribute('src', song.album.cover);
             title.innerText = song.title;
             artist.innerText = song.artist.name;
+            let minutes = Math.floor(song.duration / 60);
+            let seconds = song.duration % 60;
+            let duration = `${minutes}:${seconds}`;
+            length.innerText = duration;
+            let mobileCover = document.getElementById('mobilePlayerSongCover');
+            let mobileTitle = document.getElementById('mobilePlayerSongTitle');
+            mobileCover.setAttribute('src', song.album.cover);
+            mobileTitle.innerText = song.title;
         }
         else{
             return new Error ('errore nella fetch', response.status);
