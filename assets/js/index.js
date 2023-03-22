@@ -1,11 +1,9 @@
-let URLRequest =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 let musicList;
 let query1 = "Marracash";
 let query2 = "Lazza";
 let musicList2;
-
 
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
@@ -14,13 +12,22 @@ let miniCard = document.getElementById("miniCard");
 const getMusic = async function () {
   try {
     let response = await fetch(URLRequest + query1);
-    musicList = await response.json();
-    console.log(musicList);
-    musicList = musicList.data;
+    if (response.ok) {
+      musicList = await response.json();
+      console.log(musicList);
+      musicList = musicList.data;
 
-    console.log(musicList);
-    writeCard(musicList, query1);
-  } catch {}
+      console.log(musicList);
+      writeCard(musicList, query1);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la tracklist, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const writeCard = function (musicList, query1) {
@@ -50,13 +57,22 @@ getMusic();
 const getMusic2 = async function () {
   try {
     let response = await fetch(URLRequest + query2);
-    musicList2 = await response.json();
-    console.log(musicList2);
-    musicList2 = musicList2.data;
+    if (response.ok) {
+      musicList2 = await response.json();
+      console.log(musicList2);
+      musicList2 = musicList2.data;
 
-    console.log(musicList2);
-    writeSecondRow(musicList2);
-  } catch {}
+      console.log(musicList2);
+      writeSecondRow(musicList2);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la tracklist, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 getMusic2();
@@ -84,11 +100,19 @@ let query3 = "salmo&type=artist";
 const getMusic3 = async function () {
   try {
     let response = await fetch(URLRequest + query3);
-    let musicList3 = await response.json();
-    musicList3 = musicList3.data;
-    console.log(musicList3);
-    writeCard3(musicList3);
-  } catch {}
+    if (response.ok) {
+      let musicList3 = await response.json();
+      musicList3 = musicList3.data;
+      console.log(musicList3);
+      writeCard3(musicList3);
+    } else {
+      new Error(
+        "Non riesco a recuperare la tracklist, errore!', response.status"
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
