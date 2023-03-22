@@ -135,16 +135,11 @@ ul li {
 
 .hero {
     height: 350px;
-
+    border: 1px solid white;
 }
 
 #heroAlbum {
-    bottom: 0; /* Ma ci serve? */
-    
-}
-
-.albumCard {
-    background-color: #222222;
+    bottom: 0;
 }
 
 .artistName, .albumName {
