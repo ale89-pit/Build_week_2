@@ -8,7 +8,6 @@ console.log(queryRef);
 let firstCard = document.querySelector("#heroAlbum .card");
 let songsList = document.querySelector(".songsList");
 let coloredBack = document.getElementsByClassName("hero");
-let heroBg = document.querySelector('.heroBg');
 
 console.log(coloredBack);
 
@@ -30,8 +29,6 @@ const writeCard2 = function (tracklist) {
       </div>
      </div>`;
 
-    heroBg.style.backgroundImage = `url(${element.album.cover_medium})`;
-    console.log(heroBg);
   });
   tracklist.forEach((element) => {
     if (element.album.title == queryAlbum) {
