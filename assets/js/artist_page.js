@@ -6,6 +6,31 @@ let artistId = new URLSearchParams(window.location.search).get('artistId');
 
 console.log('artistId', artistId);
 
+let showSongInPlayer = async (songId) => {
+
+    try{
+        let response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/track/' + songId);
+        if(response.ok){
+            let song = await response.json();
+            console.log('canzone:', song);
+            let cover = document.getElementById('playerSongCover');
+            let title = document.getElementById('playerSongTitle');
+            let artist = document.getElementById('playerSongArtist');
+            cover.removeAttribute('src');
+            cover.setAttribute('src', song.album.cover);
+            title.innerText = song.title;
+            artist.innerText = song.artist.name;
+        }
+        else{
+            return new Error ('errore nella fetch', response.status);
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
+
+
+}
 
 let showSongs = (firstFiveSongs) => {
     let songCol = document.getElementById('songCol');
@@ -28,7 +53,7 @@ let showSongs = (firstFiveSongs) => {
                         <div class="col d-flex align-items-center flex-grow-1">
                             <span class="mx-3">${i}</span>
                             <div class="card artistSongCard">
-                                <div class="row g-0 align-items-center">
+                                <div class="row g-0 align-items-center song" onclick="showSongInPlayer(${song.id})">
                                     <div class="col-2">
                                         <img src="${song.album.cover_big}" class="img-fluid" alt="...">
                                     </div>
