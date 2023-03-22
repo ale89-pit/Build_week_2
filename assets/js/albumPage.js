@@ -28,7 +28,10 @@ const writeCard2 = function (choose) {
   </div>`;
   });
   choose.forEach((element) => {
-    songsList.innerHTML += `<li>${element.title}</li>` 
+    if (element.album.title == choose.album.title) {
+        songsList.innerHTML += `<li>${element.title}</li>` 
+    }
+
   })
 };
 
