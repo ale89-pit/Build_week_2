@@ -100,7 +100,7 @@ const writeCard3 = function (musicList3) {
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
                                         <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
-                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p>
+                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
