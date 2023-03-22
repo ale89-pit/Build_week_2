@@ -5,6 +5,7 @@ body {
     background-color: black;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    font-size: 0.9em;
 }
 
 #leftSidebar,
@@ -16,8 +17,8 @@ body {
 }
 
 #mainContainer {
-    background: rgb(0,0,0);
-background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 70%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(360deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 70%);
     color: white;
     padding: 0;
 }
@@ -68,24 +69,25 @@ ul li {
 }
 
 #miniCard img {
-    width: 100%;
+    width: 80px;
 }
 
 #preference img {
-    width: 100%;
-    aspect-ratio: 3/3;
-    object-fit: cover;
+    width: 170px;
+    aspect-ratio: 1/2;
+
 
 
 }
 
 #preference .card {
-    max-width: 100%;
+    width: 140px;
 }
 
 .card-body {
     width: 100%;
     padding: 0.3em;
+    line-break: auto;
 }
 
 #mainContainer,
@@ -97,8 +99,8 @@ ul li {
 }
 
 .bigCard {
-    background: rgb(0,0,0);
-    background: linear-gradient(10deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 84%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 84%);
 }
 
 .smallCards {
@@ -115,7 +117,7 @@ ul li {
 }
 
 .sizeTesto2 {
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 
 /* FOOTER */
@@ -149,7 +151,7 @@ ul li {
 .heroBg {
     background-size: cover;
     background-position: center;
-  }
+}
 
 .albumCard {
     background-color: #222222;
@@ -164,18 +166,20 @@ ul li {
     bottom: 0;
 }
 
-.noSfo  {
+.noSfo {
     background: transparent;
 }
 
-.artistName, .albumName {
+.artistName,
+.albumName {
     font-size: 4rem;
     font-weight: bolder;
 }
 
 @media screen and (max-width:576px) {
 
-    .artistName, .albumName {
+    .artistName,
+    .albumName {
         font-size: 2.5rem;
     }
 
