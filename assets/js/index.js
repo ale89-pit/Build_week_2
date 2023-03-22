@@ -1,9 +1,9 @@
-let URLRequest1 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=vasco%20rossi";
+let URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
 let musicList;
+let query1 = "Marracash";
+let query2 = "Lazza";
 let musicList2;
-let URLRequest2 =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=Lazza";
 
 let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
@@ -11,21 +11,32 @@ let miniCard = document.getElementById("miniCard");
 
 const getMusic = async function () {
   try {
-    let response = await fetch(URLRequest1);
-    musicList = await response.json();
-    console.log(musicList);
-    musicList = musicList.data;
+    let response = await fetch(URLRequest + query1);
+    if (response.ok) {
+      musicList = await response.json();
+      console.log(musicList);
+      musicList = musicList.data;
 
-    console.log(musicList);
-    writeCard(musicList);
-  } catch {}
+      console.log(musicList);
+      writeCard(musicList, query1);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la tracklist, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const writeCard = function (musicList) {
+const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
- <div class="col-4">
-     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
+ <div class="col-4 ps-0">
+ <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">
+     <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
+  </a>   
  </div>
  <div class="col-8">
      <div class="card-body">
@@ -45,14 +56,23 @@ const writeCard = function (musicList) {
 getMusic();
 const getMusic2 = async function () {
   try {
-    let response = await fetch(URLRequest2);
-    musicList2 = await response.json();
-    console.log(musicList2);
-    musicList2 = musicList2.data;
+    let response = await fetch(URLRequest + query2);
+    if (response.ok) {
+      musicList2 = await response.json();
+      console.log(musicList2);
+      musicList2 = musicList2.data;
 
-    console.log(musicList2);
-    writeSecondRow(musicList2);
-  } catch {}
+      console.log(musicList2);
+      writeSecondRow(musicList2);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la tracklist, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 getMusic2();
@@ -62,11 +82,11 @@ const writeSecondRow = function (musicList2) {
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
+                    <img src="${musicList2[i].album.cover}" class=" rounded-start"
                         alt="..." />
                 </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                    <h5 class="card-title sizeTesto m-0 p-0">${musicList2[i].title}</h5>
+                <div class="col-8 d-flex justify-content-start align-items-center">
+                    <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5>
                 </div>
             </div>
 
@@ -116,24 +136,32 @@ let query3 = "salmo&type=artist";
 
 const getMusic3 = async function () {
   try {
-    let response = await fetch(URLRequest3 + query3);
-    let musicList3 = await response.json();
-    musicList3 = musicList3.data;
-    console.log(musicList3);
-    writeCard3(musicList3);
-  } catch {}
+    let response = await fetch(URLRequest + query3);
+    if (response.ok) {
+      let musicList3 = await response.json();
+      musicList3 = musicList3.data;
+      console.log(musicList3);
+      writeCard3(musicList3);
+    } else {
+      new Error(
+        "Non riesco a recuperare la tracklist, errore!', response.status"
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
-  for (let i = 2; i < 8; i++) {
-    cardThree.innerHTML += `<div class="col col-auto d-flex justify-content-center align-items-center">
+  for (let i = 2; i < 7; i++) {
+    cardThree.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicList3[i].album.cover}" alt="" class="w-100" >
+                                        <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" >
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
                                         <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
-                                        <p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p>
+                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
