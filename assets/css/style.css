@@ -75,8 +75,6 @@ ul li {
 }
 
 #preference .card {
-
-
     max-width: 100%;
 }
 
@@ -132,4 +130,26 @@ ul li {
 
 .mobileMenuIconText {
     font-size: 0.8em;
+}
+
+.hero {
+    height: 350px;
+    border: 1px solid white;
+}
+
+#heroAlbum {
+    bottom: 0;
+}
+
+.artistName, .albumName {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+@media screen and (max-width:576px) {
+
+    .artistName, .albumName {
+        font-size: 2.5rem;
+    }
+
 }
