@@ -51,14 +51,14 @@ const writeCard2 = function (tracklist) {
                                     <div class="col-10">
                                         <div class="card-body py-0">
                                             <p class="card-text m-0 songTitle">${element.title}</p>
-                                            <span class="streams d-md-none">34.356.743</span>
+                                            <span class="streams d-md-none">${element.rank}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col col-4 d-none d-md-block">
-                            <span class="streams">34.356.743</span>
+                            <span class="streams">${element.rank}</span>
                         </div>
                         <div class="col col-2 d-none d-md-block">
                             <span class="streams">${duration}</span>
