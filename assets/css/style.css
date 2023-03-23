@@ -1,0 +1,342 @@
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-size: 0.9em;
+}
+
+
+
+#leftSidebar,
+#rightSidebar,
+#mainContainer {
+  height: 100vh;
+  margin: 0;
+  padding-bottom: 6rem;
+}
+
+#mainContainer {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(34, 34, 34, 1) 70%);
+  color: white;
+}
+
+/*
+/* Larghezza */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(100, 100, 100);
+}
+
+/* SIDEBAR LEFT */
+
+ul li {
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+li i {
+  color: rgb(188, 188, 188);
+}
+
+li span {
+  color: rgb(188, 188, 188);
+  margin-left: 17px;
+}
+
+#playlist {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+#playlist a {
+  color: gray;
+  text-decoration: none;
+  line-height: 2.5;
+}
+
+#playlist a:nth-child(9) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(11) {
+  display: flex;
+  justify-content: space-between;
+}
+
+#playlist a:nth-child(17) {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* SEARCH INPUT */
+
+#searchIcon {
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 0.3em 1em;
+}
+
+#searchContainer {
+  width: 30%;
+}
+
+/* FINE SIDEBAR LEFT */
+
+.arrows {
+  background-color: black;
+  border-radius: 100%;
+}
+
+#miniCard img {
+  width: 80px;
+}
+
+#preference img {
+  width: 170px;
+  aspect-ratio: 1/2;
+}
+
+#preference .card {
+  max-width: 140px;
+}
+
+.card-body {
+  width: 100%;
+  padding: 0.3em;
+  line-break: auto;
+}
+
+#mainContainer,
+#leftSidebar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  max-width: 100%;
+}
+
+.bigCard {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(10deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(34, 34, 34, 1) 84%);
+}
+
+.smallCards {
+  background-color: rgb(44, 44, 44);
+}
+
+#imgBigCard {
+  align-items: stretch;
+}
+
+.sizeTesto {
+  font-size: 0.8em;
+  font-weight: bolder;
+}
+
+
+.sizeTesto2 {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+/*SIDEBAR DX FRIENDS*/
+.friends:hover{
+  color: white;
+}
+
+/* FOOTER */
+
+#footerCard {
+  background-color: transparent;
+  border: none;
+}
+
+#progressBar {
+  height: 4px;
+  border: 10px;
+  width: 100%;
+  background-color: #ccc4;
+}
+
+.timing {
+  font-size: 0.8em;
+}
+
+.mobileMenuIconText {
+  font-size: 0.8em;
+  color: white;
+}
+
+#mobileFooter {
+  background: rgb(50, 50, 50);
+  background: linear-gradient(180deg,
+      rgba(50, 50, 50, 0) 0%,
+      rgba(0, 0, 0, 1) 98%);
+}
+
+#mobileFooterContainer {
+  width: 95%;
+  margin: auto;
+}
+
+.greenIcon {
+  color: green;
+}
+
+footer .bi {
+  cursor: pointer;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 19.5rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #c2c2c2;
+  border-radius: 0.5rem;
+  height: 0.3rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  margin-top: -1.6px;
+  /* Centers thumb on the track */
+  background-color: #ededed;
+  border-radius: 1rem;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid #ededed;
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #c2c2c2;
+  border-radius: 0.5rem;
+  height: 0.3rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: #ededed;
+  border: none;
+  /*Removes extra border that FF applies*/
+  border-radius: 1rem;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  outline: 3px solid #ededed;
+  outline-offset: 0.125rem;
+}
+
+/* ARTIST PAGE */
+
+.hero {
+  height: 350px;
+}
+
+.heroBg {
+  background-size: cover;
+  background-position: center;
+}
+
+.albumCard {
+  background-color: #222222;
+  border: 1px solid red;
+}
+
+.bi-patch-check-fill {
+  color: blue;
+}
+
+#heroArtist {
+  bottom: 0;
+}
+
+.noSfo {
+  background: transparent;
+}
+
+.artistName,
+.albumName {
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 576px) {
+
+  .artistName,
+  .albumName {
+    font-size: 2.5rem;
+  }
+}
+
+.playButtonGreen {
+  color: rgb(0, 171, 0);
+  font-size: 2.5em;
+}
+
+.artistSongCard {
+  background-color: transparent;
+  border: none;
+}
+
+.streams {
+  font-size: 0.8rem;
+}
+
+.songTitle {
+  font-size: 0.8rem;
+}
+
+.song:hover {
+  cursor: pointer;
+}
+
+a:link a:visited a:active {
+  text-decoration: none;
+}
+
+.bi-play-circle::before {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: white
+}
