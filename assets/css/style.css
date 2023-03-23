@@ -14,7 +14,7 @@ body {
 #mainContainer {
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding-bottom: 6rem;
 }
 
 #mainContainer {
@@ -23,7 +23,6 @@ body {
       rgba(0, 0, 0, 1) 0%,
       rgba(34, 34, 34, 1) 70%);
   color: white;
-  padding: 0;
 }
 
 /*
@@ -80,6 +79,17 @@ li span {
 }
 
 /* SEARCH INPUT */
+
+#searchIcon {
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 0.3em 1em;
+}
+
+#searchContainer {
+  width: 30%;
+}
 
 /* FINE SIDEBAR LEFT */
 

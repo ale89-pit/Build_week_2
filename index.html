@@ -47,8 +47,7 @@
                                 </span>
                             </a></li>
                         <!-- Cerca -->
-                        <li><a class="text-decoration-none text-secondary" href=""><i id="search-btn"
-                                    class="bi bi-search fs fs-4"></i>
+                        <li><a class="text-decoration-none text-secondary" href="" id="search-btn"><i class="bi bi-search fs fs-4"></i>
                                 <span>
                                     Cerca
                                 </span>
@@ -142,7 +141,7 @@
 
                     <div id="searchContainer">
 
-                        <input class="" id="searchIcon" type="text">
+                        <input class="d-block d-none" id="searchIcon" type="text" onkeyup="processChange()" placeholder="Cerca la tua canzone preferita...">
 
                     </div>
 
@@ -446,7 +445,7 @@
                 <i class="px-5 fs-1 bi bi-house-fill "></i>
                 <a href="index.html" class="text-decoration-none"><span class="mobileMenuIconText">Home</span></a>
             </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center" id="mobileSearchBtn">
                 <i class="px-5 fs-1 bi bi-search"></i>
                 <span class="mobileMenuIconText">Search</span>
             </div>

@@ -9,6 +9,8 @@ let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
 let miniCard = document.getElementById("miniCard");
 
+//FETCH PER LA CARD GRANDE
+
 const getMusic = async function () {
   try {
     let response = await fetch(URLRequest + query1);
@@ -35,7 +37,7 @@ const getMusic = async function () {
 const inputSearchReference = document.getElementById("searchIcon");
 let musicListSearch;
 
-// FUNZIONE writeCardSearch
+// FUNZIONE writeCardSearch SCRIVE LE CARD IN RICERCA
 const searchRef = document.getElementById("searchRef");
 
 inputSearchReference.addEventListener("keyup", (e, musicListSearch) => {
@@ -68,7 +70,7 @@ const writeCardSearch = function (musicListSearch) {
       <img src="${musicListSearch[0].album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
    </a>   
   </div>
-  <div class="col-8">
+  <div class="col-8 d-flex align-items-center">
       <div class="card-body">
       <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">    <h5 class="card-title display-2 fw-bold">${musicListSearch[0].album.title}</h5></a>
       <a href="artist_page.html?artistId=${musicListSearch[0].artist.id}">       <p class="card-text">
@@ -81,6 +83,8 @@ const writeCardSearch = function (musicListSearch) {
   </div>
  </div>`;
 };
+
+//FETCH SUI RISULTATI DELLA RICERCA
 
 const searchMusic = async function () {
   try {
@@ -106,7 +110,8 @@ const searchMusic = async function () {
   }
 };
 
-// SIDEBAR SEARCH LEFT END
+// SIDEBAR SEARCH LEFT END 
+// SCRIVE CARD PRINCIPALE (ALBUM)
 
 const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
@@ -116,7 +121,7 @@ const writeCard = function (musicList, query1) {
      <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
   </a>   
  </div>
- <div class="col-8">
+ <div class="col-8 d-flex align-items-center">
      <div class="card-body">
      <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-2 fw-bold">${element.album.title}</h5></a>
          <a href="artist_page.html?artistId=${element.artist.id}"> <p class="card-text">
@@ -154,6 +159,9 @@ const getMusic2 = async function () {
 };
 
 getMusic2();
+
+//PARTE BUONASERA
+
 const writeSecondRow = function (musicList2) {
   for (let i = 0; i < 6; i++) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
@@ -173,8 +181,11 @@ const writeSecondRow = function (musicList2) {
   }
 };
 
+//ALTRO CHE TI POTREBBE PIACERE
+
 let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let query3 = "salmo&type=artist";
+
 
 const getMusic3 = async function () {
   try {
@@ -227,3 +238,19 @@ const writeCard3 = function (musicList3) {
   }
 };
 getMusic3();
+
+//MOSTRA E FAI VEDERE SEARCH INPUT
+
+let searchIcon = document.getElementById('search-btn');
+
+searchIcon.onclick = (event) => {
+  event.preventDefault();
+  inputSearchReference.classList.toggle('d-none');
+}
+
+let mobileSearchBtn = document.getElementById('mobileSearchBtn');
+
+mobileSearchBtn.onclick = (event) => {
+  event.preventDefault();
+  inputSearchReference.classList.toggle('d-none');
+}
