@@ -192,6 +192,10 @@ li span {
   color: green;
 }
 
+footer .bi {
+  cursor: pointer;
+}
+
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
   -webkit-appearance: none;
