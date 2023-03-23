@@ -51,10 +51,10 @@ const writeCardSearch = function (musicListSearch) {
   console.log(musicListSearch);
   console.log(searchRef);
   for (let i = 0; i < musicListSearch.length; i++) {
-    searchRef.innerHTML += `<div class="col my-3 d-flex justify-content-center align-items-center">
+    searchRef.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <img src="${musicListSearch[i].album.cover}" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <img src="${musicListSearch[i].album.cover_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap ">
                                     <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <h6 class="m-0 mb-2 sizeTesto text-light text-truncate">${musicListSearch[i].title}</h6></a>
