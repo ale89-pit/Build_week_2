@@ -128,20 +128,6 @@ const searchMusic = async function () {
   }
 };
 
-// RIMOZIONE D-NONE DI SEARCH INPUT
-// selezione l'icona di ricerca
-const searchIcon = document.getElementById("noneRemove");
-
-searchIcon.addEventListener("click", (e) => {
-  e.preventDefault();
-  const searchContainer = document.getElementById("searchContainer");
-
-  // RImozione della classe d-none dall'elemento "searchContainer"
-  searchContainer.classList.remove("d-none");
-});
-
-// FINE RIMOZIONE D-NONE DI SEARCH INPUT
-
 // SIDEBAR SEARCH LEFT END
 // SCRIVE CARD PRINCIPALE (ALBUM)
 
