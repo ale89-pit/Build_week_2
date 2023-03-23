@@ -128,6 +128,11 @@ li span {
   font-size: 0.7em;
 }
 
+/*SIDEBAR DX FRIENDS*/
+.friends:hover{
+  color: white;
+}
+
 /* FOOTER */
 
 #footerCard {
