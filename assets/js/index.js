@@ -70,7 +70,7 @@ const writeCardSearch = function (musicListSearch) {
   </div>
   <div class="col-8">
       <div class="card-body">
-      <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">    <h5 class="card-title display-1 fw-bold">${musicListSearch[0].album.title}</h5></a>
+      <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">    <h5 class="card-title display-2 fw-bold">${musicListSearch[0].album.title}</h5></a>
       <a href="artist_page.html?artistId=${musicListSearch[0].artist.id}">       <p class="card-text">
           ${musicListSearch[0].artist.name}
           </p></a>
@@ -118,7 +118,7 @@ const writeCard = function (musicList, query1) {
  </div>
  <div class="col-8">
      <div class="card-body">
-     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-1 fw-bold">${element.album.title}</h5></a>
+     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-2 fw-bold">${element.album.title}</h5></a>
          <a href="artist_page.html?artistId=${element.artist.id}"> <p class="card-text">
          ${element.artist.name}
          </p></a>
@@ -199,11 +199,27 @@ const writeCard3 = function (musicList3) {
     cardThree.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"> <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${
+                                      musicList3[i].album.id
+                                    }&queryREF=${query1}&album=${
+      musicList3[i].album.title
+    }"> <img src="${
+      musicList3[i].artist.picture_medium
+    }" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
-                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"><h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6></a>
-                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
+                                    <a href="albumPage.html?id=${
+                                      musicList3[i].album.id
+                                    }&queryREF=${query1}&album=${
+      musicList3[i].album.title
+    }"><h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[
+      i
+    ].album.title.toLowerCase()}</h6></a>
+                                        <a href="artist_page.html?artistId=${
+                                          musicList3[i].artist.id
+                                        }"><p class="opacity-50 sizeTesto2 text-light ">${
+      musicList3[i].artist.name
+    }</p></a>
                                     </div>
 
                                 </div>
