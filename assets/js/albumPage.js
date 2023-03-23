@@ -58,19 +58,24 @@ const writeCard2 = function (tracklist) {
                         <div class="col d-flex align-items-center flex-grow-1">
                             <span class="mx-3">${index + 1}</span>
                             <div class="card artistSongCard">
-                                <div class="row g-0 align-items-center song" onclick="playSong(${element.id})">
+                                <div class="row g-0 align-items-center song" onclick="playSong(${
+                                  element.id
+                                })">
                                     <div class="col-2">
-                                        <img src="${element.album.cover_big
-        }" class="img-fluid" alt="...">
+                                        <img src="${
+                                          element.album.cover_big
+                                        }" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-10">
                                         <div class="card-body py-0 d-flex me-2">
                                         <div class="w-50 w-md-75 d-flex justify-content-between align-items-center>
-                                            <p class="card-text m-0 songTitle">${element.title
-        }</p>
+                                            <p class="card-text m-0 songTitle">${
+                                              element.title
+                                            }</p>
                                            </div>
-                                            <span class="streams d-md-none">${element.rank
-        }</span>
+                                            <span class="streams d-md-none">${
+                                              element.rank
+                                            }</span>
                                         </div>
                                     </div>
                                 </div>
@@ -117,8 +122,8 @@ const playSong = async function (id) {
       audio.play();
       playButton.classList.add("d-none");
       pauseButton.classList.remove("d-none");
-      mobilePlayButton.classList.add('d-none');
-      mobilePauseButton.classList.remove('d-none');
+      mobilePlayButton.classList.add("d-none");
+      mobilePauseButton.classList.remove("d-none");
       let cover = document.getElementById("playerSongCover");
       let title = document.getElementById("playerSongTitle");
       let artist = document.getElementById("playerSongArtist");
@@ -173,7 +178,9 @@ mobilePauseButton.addEventListener("click", function () {
 
 let showLocalSong = async (songId) => {
   try {
-    let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + songId);
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/track/" + songId
+    );
     if (response.ok) {
       let song = await response.json();
 
@@ -189,19 +196,16 @@ let showLocalSong = async (songId) => {
       mobileCover.setAttribute("src", song.album.cover);
       mobileTitle.innerHTML = song.title;
       audio = new Audio(song.preview);
+      let currentSong = localStorage.setItem("song", JSON.stringify(song.id));
+    } else {
+      return new Error("Errore nella fetch: ", response.status);
     }
-    else {
-      return new Error('Errore nella fetch: ', response.status);
-    }
-
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
-}
+};
 
-
-if (localStorage.getItem('song')) {
-  let songId = JSON.parse(localStorage.getItem('song'));
+if (localStorage.getItem("song")) {
+  let songId = JSON.parse(localStorage.getItem("song"));
   showLocalSong(songId);
 }
