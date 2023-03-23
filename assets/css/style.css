@@ -41,6 +41,7 @@ body {
 
 ul li {
   line-height: 1.8;
+    font-weight: bold;
 }
 
 li i {
@@ -81,6 +82,11 @@ li span {
 /* SEARCH INPUT */
 
 /* FINE SIDEBAR LEFT */
+
+.arrows {
+  background-color: black;
+  border-radius: 100%;
+}
 
 #miniCard img {
   width: 80px;
@@ -125,11 +131,13 @@ li span {
 }
 
 .sizeTesto {
-  font-size: 0.8em;
+  font-size: 1.1em;
+  font-weight: bolder;
 }
 
 .sizeTesto2 {
-  font-size: 0.7em;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 
 /* FOOTER */
