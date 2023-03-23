@@ -8,6 +8,8 @@ console.log("artistId", artistId);
 
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
+let mobilePlayButton = document.getElementById("mobilePlayBtn");
+let mobilePauseButton = document.getElementById("mobilePauseBtn");
 
 let audio;
 
@@ -38,7 +40,10 @@ let showSongInPlayer = async (songId) => {
       audio = new Audio(song.preview);
       audio.play();
       playButton.classList.add("d-none");
+      mobilePlayButton.classList.add('d-none');
       pauseButton.classList.remove("d-none");
+      mobilePauseButton.classList.remove('d-none');
+      let currentSong = localStorage.setItem('song', JSON.stringify(song.id));
     } else {
       return new Error("errore nella fetch", response.status);
     }
@@ -57,6 +62,18 @@ pauseButton.addEventListener("click", function () {
   audio.pause();
   pauseButton.classList.add("d-none");
   playButton.classList.remove("d-none");
+});
+
+mobilePlayButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  mobilePlayButton.classList.add("d-none");
+  mobilePauseButton.classList.remove("d-none");
+});
+mobilePauseButton.addEventListener("click", function () {
+  audio.pause();
+  mobilePauseButton.classList.add("d-none");
+  mobilePlayButton.classList.remove("d-none");
 });
 
 let showSongs = (firstFiveSongs) => {
