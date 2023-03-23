@@ -52,10 +52,10 @@ const writeCardSearch = function (musicListSearch) {
     searchRef.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicListSearch[i].album.cover}" alt="" class="img-fluid" >
+                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <img src="${musicListSearch[i].album.cover}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
-                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicListSearch[i].title}</h6>
+                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <h6 class="m-0 mb-2 sizeTesto text-light">${musicListSearch[i].title}</h6></a>
                                         <a href="artist_page.html?artistId=${musicListSearch[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicListSearch[i].artist.name}</p></a>
                                     </div>
 
@@ -70,13 +70,13 @@ const writeCardSearch = function (musicListSearch) {
   </div>
   <div class="col-8">
       <div class="card-body">
-          <h5 class="card-title display-1 fw-bold">${musicListSearch[0].album.title}</h5>
-          <p class="card-text">
+      <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">    <h5 class="card-title display-1 fw-bold">${musicListSearch[0].album.title}</h5></a>
+      <a href="artist_page.html?artistId=${musicListSearch[0].artist.id}">       <p class="card-text">
           ${musicListSearch[0].artist.name}
-          </p>
-          <p class="card-text">
+          </p></a>
+            <p class="card-text">
               <small class="opacity-50">Ascolta la canzone di ${musicListSearch[0].artist.name}</small>
-          </p>
+          </p></a>
       </div>
   </div>
  </div>`;
@@ -118,10 +118,10 @@ const writeCard = function (musicList, query1) {
  </div>
  <div class="col-8">
      <div class="card-body">
-         <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
-         <p class="card-text">
+     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-1 fw-bold">${element.album.title}</h5></a>
+         <a href="artist_page.html?artistId=${element.artist.id}"> <p class="card-text">
          ${element.artist.name}
-         </p>
+         </p></a>
          <p class="card-text">
              <small class="opacity-50">Ascolta la canzone di ${element.artist.name}</small>
          </p>
@@ -160,11 +160,11 @@ const writeSecondRow = function (musicList2) {
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="${musicList2[i].album.cover}" class=" rounded-start"
-                        alt="..." />
+                <a href="albumPage.html?id=${musicList2[i].album.id}&queryREF=${query1}&album=${musicList2[i].album.title}"><img src="${musicList2[i].album.cover}" class=" rounded-start"
+                        alt="..." /></a>
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
-                    <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5>
+                <a href="albumPage.html?id=${musicList2[i].album.id}&queryREF=${query1}&album=${musicList2[i].album.title}">   <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5></a>
                 </div>
             </div>
 
@@ -195,14 +195,14 @@ const getMusic3 = async function () {
 };
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
-  for (let i = 2; i < 7; i++) {
+  for (let i = 0; i < 6; i++) {
     cardThree.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" >
+                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"> <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
-                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
+                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"><h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6></a>
                                         <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
                                     </div>
 
