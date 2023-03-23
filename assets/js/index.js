@@ -68,9 +68,9 @@ const writeCardSearch = function (musicListSearch) {
       <img src="${musicListSearch[0].album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
    </a>   
   </div>
-  <div class="col-8">
+  <div class="col-8 d-flex align-items-center">
       <div class="card-body">
-          <h5 class="card-title display-1 fw-bold">${musicListSearch[0].album.title}</h5>
+          <h5 class="card-title display-2 fw-bold">${musicListSearch[0].album.title}</h5>
           <p class="card-text">
           ${musicListSearch[0].artist.name}
           </p>
@@ -116,9 +116,9 @@ const writeCard = function (musicList, query1) {
      <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
   </a>   
  </div>
- <div class="col-8">
+ <div class="col-8 d-flex align-items-center">
      <div class="card-body">
-         <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
+         <h5 class="card-title display-2 fw-bold">${element.album.title}</h5>
          <p class="card-text">
          ${element.artist.name}
          </p>
@@ -160,7 +160,7 @@ const writeSecondRow = function (musicList2) {
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="${musicList2[i].album.cover}" class=" rounded-start"
+                    <img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
                         alt="..." />
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
