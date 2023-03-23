@@ -37,7 +37,7 @@ const writeCard2 = function (tracklist) {
    <div class="col-8 noSfo">
        <div class="card-body">
         <p> ALBUM <p>
-           <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
+           <h5 class="card-title display-1 fw-bold text-truncate">${element.album.title}</h5>
            <p class="card-text">
                <small class="font-weight-bold">${element.artist.name}</small>
            </p>
