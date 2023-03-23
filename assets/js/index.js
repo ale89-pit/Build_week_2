@@ -164,7 +164,7 @@ const writeSecondRow = function (musicList2) {
                         alt="..." />
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
-                    <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5>
+                    <h5 class="card-title sizeTesto m-0 ms-1">${musicList2[i].title}</h5>
                 </div>
             </div>
 
