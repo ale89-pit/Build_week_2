@@ -5,22 +5,11 @@ const URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 let artistId = new URLSearchParams(window.location.search).get("artistId");
 
 console.log("artistId", artistId);
-var audio = new Audio(
-  "https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3"
-);
+
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
-playButton.addEventListener("click", function () {
-  // Riproduci il suono
-  audio.play();
-  playButton.classList.add("d-none");
-  pauseButton.classList.remove("d-none");
-});
-pauseButton.addEventListener("click", function () {
-  audio.pause();
-  pauseButton.classList.add("d-none");
-  playButton.classList.remove("d-none");
-});
+
+let audio;
 
 let showSongInPlayer = async (songId) => {
   try {
@@ -46,6 +35,10 @@ let showSongInPlayer = async (songId) => {
       let mobileTitle = document.getElementById("mobilePlayerSongTitle");
       mobileCover.setAttribute("src", song.album.cover);
       mobileTitle.innerText = song.title;
+      audio = new Audio(song.preview);
+      audio.play();
+      playButton.classList.add("d-none");
+      pauseButton.classList.remove("d-none");
     } else {
       return new Error("errore nella fetch", response.status);
     }
@@ -53,6 +46,18 @@ let showSongInPlayer = async (songId) => {
     console.log(error);
   }
 };
+
+playButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
+pauseButton.addEventListener("click", function () {
+  audio.pause();
+  pauseButton.classList.add("d-none");
+  playButton.classList.remove("d-none");
+});
 
 let showSongs = (firstFiveSongs) => {
   let songCol = document.getElementById("songCol");
