@@ -160,7 +160,7 @@ const writeSecondRow = function (musicList2) {
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                <a href="artist_page.html?artistId=${musicList2[i].artist.id}"><img src="${musicList2[i].album.cover}" class=" rounded-start"
+                <a href="artist_page.html?artistId=${musicList2[i].artist.id}"><img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
                         alt="..." /></a>
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
