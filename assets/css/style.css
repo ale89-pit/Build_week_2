@@ -5,6 +5,7 @@ body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
   font-size: 0.9em;
 }
 
