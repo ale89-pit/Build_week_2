@@ -330,6 +330,7 @@ input[type="range"]:focus::-moz-range-thumb {
 
 a:link a:visited a:active {
   text-decoration: none;
+  color: white;
 }
 
 .bi-play-circle::before {
@@ -338,5 +339,5 @@ a:link a:visited a:active {
 
 a:link {
   text-decoration: none;
-  color: white
+  color: white;
 }
