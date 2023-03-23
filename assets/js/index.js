@@ -229,7 +229,7 @@ const writeCard3 = function (musicList3) {
                                     <div class="card-img-top" >
                                     <a href="albumPage.html?id=${musicList3[i].album.id
       }&queryREF=${query1}&album=${musicList3[i].album.title
-      }"> <img src="${musicList3[i].artist.picture_medium
+      }"> <img src="${musicList3[i].album.cover_medium
       }" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 ">
