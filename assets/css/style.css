@@ -9,6 +9,8 @@ body {
   font-size: 0.9em;
 }
 
+
+
 #leftSidebar,
 #rightSidebar,
 #mainContainer {
@@ -40,7 +42,7 @@ body {
 
 ul li {
   line-height: 1.8;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 li i {
@@ -108,7 +110,7 @@ li span {
 }
 
 #preference .card {
-  width: 140px;
+  max-width: 140px;
 }
 
 .card-body {
@@ -141,9 +143,10 @@ li span {
 }
 
 .sizeTesto {
-  font-size: 1.1em;
+  font-size: 0.8em;
   font-weight: bolder;
 }
+
 
 .sizeTesto2 {
   font-size: 0.8em;
