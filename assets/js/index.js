@@ -235,9 +235,9 @@ const writeCard3 = function (musicList3) {
                                     <div class="card-body text-dark w-100 ">
                                     <a href="albumPage.html?id=${musicList3[i].album.id
       }&queryREF=${query1}&album=${musicList3[i].album.title
-      }"><h6 class="m-0 mb-2 sizeTesto text-light text-truncate">${musicList3[
+      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList3[
         i
-      ].album.title.toLowerCase()}</h6></a>
+      ].album.title}</h6></a>
                                         <a href="artist_page.html?artistId=${musicList3[i].artist.id
       }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList3[i].artist.name
       }</p></a>
@@ -248,6 +248,152 @@ const writeCard3 = function (musicList3) {
   }
 };
 getMusic3();
+
+//PER I FAN DI VASCO
+let query4 = "Elodie&type=track";
+
+const getMusic4 = async function () {
+  try {
+    let response = await fetch(URLRequest + query4);
+    if (response.ok) {
+      let musicList4 = await response.json();
+      musicList4 = musicList4.data;
+      console.log(musicList4);
+      writeCard4(musicList4);
+    } else {
+      new Error(
+        "Non riesco a recuperare la tracklist, errore!', response.status"
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+let cardFour = document.getElementById("cardFour");
+const writeCard4 = function (musicList4) {
+  for (let i = 0; i < 6; i++) {
+    cardFour.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                    <a href="albumPage.html?id=${musicList4[i].album.id
+      }&queryREF=${query1}&album=${musicList4[i].album.title
+      }"> <img src="${musicList4[i].album.cover_medium
+      }" alt="" class="img-fluid" ></a>
+                                    </div>
+                                    <div class="card-body text-dark w-100 ">
+                                    <a href="albumPage.html?id=${musicList4[i].album.id
+      }&queryREF=${query1}&album=${musicList4[i].album.title
+      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList4[
+        i
+      ].album.title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList4[i].artist.id
+      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList4[i].artist.name
+      }</p></a>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+};
+getMusic4();
+
+//POV: SEI GIOVANE E SEI SU SPOTIFY
+
+let query5 = "doja%20cat&type=playlist";
+
+const getMusic5 = async function () {
+  try {
+    let response = await fetch(URLRequest + query5);
+    if (response.ok) {
+      let musicList5 = await response.json();
+      musicList5 = musicList5.data;
+      console.log(musicList5);
+      writeCard5(musicList5);
+    } else {
+      new Error(
+        "Non riesco a recuperare la tracklist, errore!', response.status"
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+let cardFive = document.getElementById("cardFive");
+const writeCard5 = function (musicList5) {
+  for (let i = 0; i < 6; i++) {
+    cardFive.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                    <a href="albumPage.html?id=${musicList5[i].album.id
+      }&queryREF=${query1}&album=${musicList5[i].album.title
+      }"> <img src="${musicList5[i].album.cover_medium
+      }" alt="" class="img-fluid" ></a>
+                                    </div>
+                                    <div class="card-body text-dark w-100 ">
+                                    <a href="albumPage.html?id=${musicList5[i].album.id
+      }&queryREF=${query1}&album=${musicList5[i].album.title
+      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList5[
+        i
+      ].album.title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList5[i].artist.id
+      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList5[i].artist.name
+      }</p></a>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+};
+getMusic5();
+
+//ASCOLTA ORA L'ULTIMO ALBUM DI DANI FAIV
+
+let query6 = "teoria%20del%20contrario&type=track";
+
+const getMusic6 = async function () {
+  try {
+    let response = await fetch(URLRequest + query6);
+    if (response.ok) {
+      let musicList6 = await response.json();
+      musicList6 = musicList6.data;
+      console.log(musicList6);
+      writeCard6(musicList6);
+    } else {
+      new Error(
+        "Non riesco a recuperare la tracklist, errore!', response.status"
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+let cardSix = document.getElementById("cardSix");
+const writeCard6 = function (musicList6) {
+  for (let i = 0; i < 6; i++) {
+    cardSix.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                    <a href="albumPage.html?id=${musicList6[i].album.id
+      }&queryREF=${query1}&album=${musicList6[i].album.title
+      }"> <img src="${musicList6[i].album.cover_medium
+      }" alt="" class="img-fluid" ></a>
+                                    </div>
+                                    <div class="card-body text-dark w-100 ">
+                                    <a href="albumPage.html?id=${musicList6[i].album.id
+      }&queryREF=${query1}&album=${musicList6[i].album.title
+      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList6[
+        i
+      ].title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList6[i].artist.id
+      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList6[i].artist.name
+      }</p></a>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+};
+getMusic6();
 
 //MOSTRA E FAI VEDERE SEARCH INPUT
 
