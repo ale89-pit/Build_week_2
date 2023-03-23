@@ -153,6 +153,11 @@ li span {
   text-decoration: none;
 }
 
+/*SIDEBAR DX FRIENDS*/
+.friends:hover{
+  color: white;
+}
+
 /* FOOTER */
 
 #footerCard {
