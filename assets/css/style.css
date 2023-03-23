@@ -18,11 +18,9 @@ body {
 
 #mainContainer {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    360deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(34, 34, 34, 1) 70%
-  );
+  background: linear-gradient(360deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(34, 34, 34, 1) 70%);
   color: white;
   padding: 0;
 }
@@ -77,6 +75,7 @@ li span {
   display: flex;
   justify-content: space-between;
 }
+
 /* FINE SIDEBAR LEFT */
 
 #miniCard img {
@@ -108,11 +107,9 @@ li span {
 
 .bigCard {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    10deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(34, 34, 34, 1) 84%
-  );
+  background: linear-gradient(10deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(34, 34, 34, 1) 84%);
 }
 
 .smallCards {
@@ -156,11 +153,9 @@ li span {
 
 #mobileFooter {
   background: rgb(50, 50, 50);
-  background: linear-gradient(
-    180deg,
-    rgba(50, 50, 50, 0) 0%,
-    rgba(0, 0, 0, 1) 98%
-  );
+  background: linear-gradient(180deg,
+      rgba(50, 50, 50, 0) 0%,
+      rgba(0, 0, 0, 1) 98%);
 }
 
 #mobileFooterContainer {
@@ -270,6 +265,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 @media screen and (max-width: 576px) {
+
   .artistName,
   .albumName {
     font-size: 2.5rem;
@@ -296,4 +292,14 @@ input[type="range"]:focus::-moz-range-thumb {
 
 .song:hover {
   cursor: pointer;
+}
+
+a:link a:visited a:active {
+  text-decoration: none;
+
+}
+
+.bi-play-circle::before {
+  color: white;
+
 }

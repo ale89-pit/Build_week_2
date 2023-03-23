@@ -1,71 +1,74 @@
-console.log('Funziona tutto!');
+console.log("Funziona tutto!");
 
 const URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
-let artistId = new URLSearchParams(window.location.search).get('artistId');
+let artistId = new URLSearchParams(window.location.search).get("artistId");
 
-console.log('artistId', artistId);
-
-let playButton = document.getElementById('playButton');
-
-playButton.addEventListener('click', function(){
-
-    var audio = new Audio("https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3");
-    // Riproduci il suono
-    audio.play();
-})
-
+console.log("artistId", artistId);
+var audio = new Audio(
+  "https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3"
+);
+let playButton = document.getElementById("playButton");
+let pauseButton = document.getElementById("pauseButton");
+playButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
+pauseButton.addEventListener("click", function () {
+  audio.pause();
+  pauseButton.classList.add("d-none");
+  playButton.classList.remove("d-none");
+});
 
 let showSongInPlayer = async (songId) => {
-
-    try {
-        let response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/track/' + songId);
-        if (response.ok) {
-            let song = await response.json();
-            console.log('canzone:', song);
-            let cover = document.getElementById('playerSongCover');
-            let title = document.getElementById('playerSongTitle');
-            let artist = document.getElementById('playerSongArtist');
-            let length = document.getElementById('songLength');
-            cover.removeAttribute('src');
-            cover.setAttribute('src', song.album.cover);
-            title.innerText = song.title;
-            artist.innerText = song.artist.name;
-            let minutes = Math.floor(song.duration / 60);
-            let seconds = song.duration % 60;
-            let duration = `${minutes}:${seconds}`;
-            length.innerText = duration;
-            let mobileCover = document.getElementById('mobilePlayerSongCover');
-            let mobileTitle = document.getElementById('mobilePlayerSongTitle');
-            mobileCover.setAttribute('src', song.album.cover);
-            mobileTitle.innerText = song.title;
-        }
-        else {
-            return new Error('errore nella fetch', response.status);
-        }
+  try {
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/track/" + songId
+    );
+    if (response.ok) {
+      let song = await response.json();
+      console.log("canzone:", song);
+      let cover = document.getElementById("playerSongCover");
+      let title = document.getElementById("playerSongTitle");
+      let artist = document.getElementById("playerSongArtist");
+      let length = document.getElementById("songLength");
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerText = song.title;
+      artist.innerText = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerText = duration;
+      let mobileCover = document.getElementById("mobilePlayerSongCover");
+      let mobileTitle = document.getElementById("mobilePlayerSongTitle");
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerText = song.title;
+    } else {
+      return new Error("errore nella fetch", response.status);
     }
-    catch (error) {
-        console.log(error);
-    }
-
-
-}
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 let showSongs = (firstFiveSongs) => {
-    let songCol = document.getElementById('songCol');
-    let colDx = document.getElementById('colDx');
-    let i = 1;
+  let songCol = document.getElementById("songCol");
+  let colDx = document.getElementById("colDx");
+  let i = 1;
 
-    firstFiveSongs.forEach((song) => {
-        // 👇️ get the number of full minutes
-        let minutes = Math.floor(song.duration / 60);
+  firstFiveSongs.forEach((song) => {
+    // 👇️ get the number of full minutes
+    let minutes = Math.floor(song.duration / 60);
 
-        // 👇️ get the remainder of the seconds
-        let seconds = song.duration % 60;
+    // 👇️ get the remainder of the seconds
+    let seconds = song.duration % 60;
 
-        let duration = `${minutes}:${seconds}`;
+    let duration = `${minutes}:${seconds}`;
 
-        songCol.innerHTML += `
+    songCol.innerHTML += `
         <!-- CANZONE -->
 
                     <div class="row align-items-center my-3">
@@ -93,12 +96,12 @@ let showSongs = (firstFiveSongs) => {
                         </div>
                     </div>
         <!-- FINE CANZONE -->
-        `
-        i++;
-    });
-    songCol.innerHTML += `<p class="text-secondary">VISUALIZZA ALTRO</p>`;
+        `;
+    i++;
+  });
+  songCol.innerHTML += `<p class="text-secondary">VISUALIZZA ALTRO</p>`;
 
-    colDx.innerHTML += `<div class="card artistSongCard">
+  colDx.innerHTML += `<div class="card artistSongCard">
     <div class="row g-0 align-items-center">
         <div class="col-4">
             <img src="https://api.deezer.com/artist/${firstFiveSongs[0].artist.id}/image" class="img-fluid rounded-circle" width="70px">
@@ -111,63 +114,62 @@ let showSongs = (firstFiveSongs) => {
         </div>
     </div>
 </div>`;
-}
+};
 
 let showArtistTracklist = async (artistTracklist) => {
-    try {
-        let response = await fetch(artistTracklist);
-        if (response.ok) {
-            let tracklist = await response.json();
-            console.log('tracklist', tracklist);
-            let firstFiveSongs = tracklist.data;
-            console.log('Prime 5 canzoni:', firstFiveSongs);
-            showSongs(firstFiveSongs);
-        }
-        else {
-            return new Error('Non riesco a recuperare la tracklist, errore!', response.status);
-        }
-
+  try {
+    let response = await fetch(artistTracklist);
+    if (response.ok) {
+      let tracklist = await response.json();
+      console.log("tracklist", tracklist);
+      let firstFiveSongs = tracklist.data;
+      console.log("Prime 5 canzoni:", firstFiveSongs);
+      showSongs(firstFiveSongs);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la tracklist, errore!",
+        response.status
+      );
     }
-    catch (error) {
-        console.log(error);
-    }
-}
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 let showArtist = (artist) => {
-    let artistName = document.getElementsByClassName('artistName')[0];
-    artistName.innerHTML = artist.name;
-    let artistBgImageUrl = artist.picture_xl;
-    console.log('background hero:', artistBgImageUrl);
-    let heroBackground = document.getElementsByClassName('hero')[0];
-    console.log(heroBackground);
-    // heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + ')';
-    heroBackground.style.backgroundSize = "cover";
-    heroBackground.style.backgroundRepeat = "no-repeat"
-    heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + '), linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5))';
-
-}
+  let artistName = document.getElementsByClassName("artistName")[0];
+  artistName.innerHTML = artist.name;
+  let artistBgImageUrl = artist.picture_xl;
+  console.log("background hero:", artistBgImageUrl);
+  let heroBackground = document.getElementsByClassName("hero")[0];
+  console.log(heroBackground);
+  // heroBackground.style.backgroundImage = 'url(' + artistBgImageUrl + ')';
+  heroBackground.style.backgroundSize = "cover";
+  heroBackground.style.backgroundRepeat = "no-repeat";
+  heroBackground.style.backgroundImage =
+    "url(" +
+    artistBgImageUrl +
+    "), linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5))";
+};
 
 let findArtist = async () => {
-    try {
-        let response = await fetch(URLRequest + artistId);
-        if (response.ok) {
-            console.log('Ho ricevuto i dati: ', response);
-            let artist = await response.json();
-            console.log('artist ricevuto', artist);
-            console.log('Artist:', artist.name);
-            let artistTracklist = artist.tracklist;
-            console.log('artistTracklist:', artistTracklist);
-            showArtist(artist);
-            showArtistTracklist(artistTracklist);
-        }
-        else {
-            return new Error('Errore!', response.status);
-        }
-
+  try {
+    let response = await fetch(URLRequest + artistId);
+    if (response.ok) {
+      console.log("Ho ricevuto i dati: ", response);
+      let artist = await response.json();
+      console.log("artist ricevuto", artist);
+      console.log("Artist:", artist.name);
+      let artistTracklist = artist.tracklist;
+      console.log("artistTracklist:", artistTracklist);
+      showArtist(artist);
+      showArtistTracklist(artistTracklist);
+    } else {
+      return new Error("Errore!", response.status);
     }
-    catch (error) {
-        console.log(error);
-    }
-}
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 findArtist();
