@@ -299,7 +299,7 @@ getMusic4();
 
 //POV: SEI GIOVANE E SEI SU SPOTIFY
 
-let query5 = "doja%20cat&type=playlist";
+let query5 = "Calvin%20Harris&type=artist";
 
 const getMusic5 = async function () {
   try {
