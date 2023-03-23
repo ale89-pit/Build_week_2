@@ -16,6 +16,13 @@ let mobilePlayButton = document.getElementById("mobilePlayBtn");
 let mobilePauseButton = document.getElementById("mobilePauseBtn");
 console.log(coloredBack);
 
+let cover = document.getElementById("playerSongCover");
+let title = document.getElementById("playerSongTitle");
+let artist = document.getElementById("playerSongArtist");
+let length = document.getElementById("songLength");
+let mobileCover = document.getElementById("mobilePlayerSongCover");
+let mobileTitle = document.getElementById("mobilePlayerSongTitle");
+
 
 
 
@@ -161,3 +168,40 @@ mobilePauseButton.addEventListener("click", function () {
   mobilePauseButton.classList.add("d-none");
   mobilePlayButton.classList.remove("d-none");
 });
+
+//FOOTER
+
+let showLocalSong = async (songId) => {
+  try {
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + songId);
+    if (response.ok) {
+      let song = await response.json();
+
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerHTML = song.title;
+      artist.innerHTML = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerHTML = duration;
+
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerHTML = song.title;
+      audio = new Audio(song.preview);
+    }
+    else {
+      return new Error('Errore nella fetch: ', response.status);
+    }
+
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+
+if (localStorage.getItem('song')) {
+  let songId = JSON.parse(localStorage.getItem('song'));
+  showLocalSong(songId);
+}

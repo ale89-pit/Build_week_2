@@ -13,6 +13,13 @@ let mobilePauseButton = document.getElementById("mobilePauseBtn");
 
 let audio;
 
+let cover = document.getElementById("playerSongCover");
+let title = document.getElementById("playerSongTitle");
+let artist = document.getElementById("playerSongArtist");
+let length = document.getElementById("songLength");
+let mobileCover = document.getElementById("mobilePlayerSongCover");
+let mobileTitle = document.getElementById("mobilePlayerSongTitle");
+
 let showSongInPlayer = async (songId) => {
   try {
     let response = await fetch(
@@ -195,3 +202,42 @@ let findArtist = async () => {
 };
 
 findArtist();
+
+
+//FOOTER
+
+let showLocalSong = async (songId) => {
+  try{
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + songId);
+    if(response.ok){
+      let song = await response.json();
+      console.log('Risultato song:', song);
+      console.log('song.title:', song.title);
+      console.log('song.name:', song.artist.name);
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerText = song.title;
+      artist.innerText = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerText = duration;
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerText = song.title;
+      audio = new Audio(song.preview);
+    }
+    else{
+      return new Error ('Errore nella fetch: ', response.status);
+    }
+
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+
+if (localStorage.getItem('song')) {
+  let songId = JSON.parse(localStorage.getItem('song'));
+  showLocalSong(songId);
+}
