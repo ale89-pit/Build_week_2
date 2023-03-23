@@ -9,6 +9,8 @@ let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
 let miniCard = document.getElementById("miniCard");
 
+//FETCH PER LA CARD GRANDE
+
 const getMusic = async function () {
   try {
     let response = await fetch(URLRequest + query1);
@@ -30,6 +32,87 @@ const getMusic = async function () {
   }
 };
 
+// SIDEBAR SEARCH LEFT
+
+const inputSearchReference = document.getElementById("searchIcon");
+let musicListSearch;
+
+// FUNZIONE writeCardSearch SCRIVE LE CARD IN RICERCA
+const searchRef = document.getElementById("searchRef");
+
+inputSearchReference.addEventListener("keyup", (e, musicListSearch) => {
+  searchMusic();
+  console.log("searchMusic()");
+  console.log("ho schiacciato il bottone");
+});
+
+const writeCardSearch = function (musicListSearch) {
+  searchRef.innerHTML = "";
+  console.log(musicListSearch);
+  console.log(searchRef);
+  for (let i = 0; i < musicListSearch.length; i++) {
+    searchRef.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <img src="${musicListSearch[i].album.cover_medium}" alt="" class="img-fluid" ></a>
+                                    </div>
+                                    <div class="card-body text-dark w-100 word-wrap ">
+                                    <a href="albumPage.html?id=${musicListSearch[i].album.id}&queryREF=${query1}&album=${musicListSearch[i].album.title}"> <h6 class="m-0 mb-2 sizeTesto text-light text-truncate">${musicListSearch[i].title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicListSearch[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light word-wrap ">${musicListSearch[i].artist.name}</p></a>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+  firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
+  <div class="col-4 ps-0">
+  <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">
+      <img src="${musicListSearch[0].album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
+   </a>   
+  </div>
+  <div class="col-8 d-flex align-items-center">
+      <div class="card-body">
+      <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">    <h5 class="card-title display-2 fw-bold">${musicListSearch[0].album.title}</h5></a>
+      <a href="artist_page.html?artistId=${musicListSearch[0].artist.id}">       <p class="card-text text-truncate">
+          ${musicListSearch[0].artist.name}
+          </p></a>
+            <p class="card-text text-truncate">
+              <small class="opacity-50">Ascolta la canzone di ${musicListSearch[0].artist.name}</small>
+          </p></a>
+      </div>
+  </div>
+ </div>`;
+};
+
+//FETCH SUI RISULTATI DELLA RICERCA
+
+const searchMusic = async function () {
+  try {
+    let response = await fetch(
+      URLRequest + inputSearchReference.value + "&" + "type=album"
+    );
+    if (response.ok) {
+      musicListSearch = await response.json();
+      console.log(musicListSearch);
+      musicListSearch = musicListSearch.data;
+
+      writeCardSearch(musicListSearch);
+
+      console.log(musicListSearch);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la traccia, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// SIDEBAR SEARCH LEFT END
+// SCRIVE CARD PRINCIPALE (ALBUM)
+
 const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
@@ -38,12 +121,12 @@ const writeCard = function (musicList, query1) {
      <img src="${element.album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
   </a>   
  </div>
- <div class="col-8">
+ <div class="col-8 d-flex align-items-center">
      <div class="card-body">
-         <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
-         <p class="card-text">
+     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-2 fw-bold">${element.album.title}</h5></a>
+         <a href="artist_page.html?artistId=${element.artist.id}"> <p class="card-text">
          ${element.artist.name}
-         </p>
+         </p></a>
          <p class="card-text">
              <small class="opacity-50">Ascolta la canzone di ${element.artist.name}</small>
          </p>
@@ -76,17 +159,20 @@ const getMusic2 = async function () {
 };
 
 getMusic2();
+
+//PARTE BUONASERA
+
 const writeSecondRow = function (musicList2) {
   for (let i = 0; i < 6; i++) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
         <div class="card mb-3 text-light smallCards">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="${musicList2[i].album.cover}" class=" rounded-start"
-                        alt="..." />
+                <a href="artist_page.html?artistId=${musicList2[i].artist.id}"><img src="${musicList2[i].album.cover}" class="img-fluid rounded-start"
+                        alt="..." /></a>
                 </div>
                 <div class="col-8 d-flex justify-content-start align-items-center">
-                    <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5>
+                <a href="albumPage.html?id=${musicList2[i].album.id}&queryREF=${query1}&album=${musicList2[i].album.title}">   <h5 class="card-title sizeTesto m-0 ms-3">${musicList2[i].title}</h5></a>
                 </div>
             </div>
 
@@ -95,41 +181,7 @@ const writeSecondRow = function (musicList2) {
   }
 };
 
-// BARRA DI RICERCA
-// Dichiaro variabile per input di ricerca
-let searchInputReference = document.getElementById("searchIcon");
-let input;
-
-// collego l'evento click alla "button" per l'input search
-searchInputReference.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  // piccola animazione per far comparire il campo di input da icona a text input in dissolvenza. . .
-  let inpuText = document.createElement("input");
-  inpuText.placeholder = "inserisci testo";
-  inpuText.style.animation = "slideIn 0.5s forwards";
-  inpuText.style.backgroundColor = "black";
-  inpuText.style.border = "none";
-  inpuText.style.color = "white";
-  inpuText.style.outlineStyle = "none";
-  inpuText.style.borderBottom = "1px solid gray";
-  inpuText.style.transformOrigin = "top right";
-  searchInputReference.replaceWith(inpuText);
-});
-let fadeAnimate = `@keyframes slideIn {
-  from {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}`;
-
-let inputFade = document.createElement("style");
-inputFade.innerHTML = fadeAnimate;
-document.head.appendChild(inputFade);
+//ALTRO CHE TI POTREBBE PIACERE
 
 let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let query3 = "salmo&type=artist";
@@ -153,15 +205,31 @@ const getMusic3 = async function () {
 };
 let cardThree = document.getElementById("cardThree");
 const writeCard3 = function (musicList3) {
-  for (let i = 2; i < 7; i++) {
-    cardThree.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
+  for (let i = 0; i < 6; i++) {
+    cardThree.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                        <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" >
+                                    <a href="albumPage.html?id=${
+                                      musicList3[i].album.id
+                                    }&queryREF=${query1}&album=${
+      musicList3[i].album.title
+    }"> <img src="${
+      musicList3[i].artist.picture_medium
+    }" alt="" class="img-fluid" ></a>
                                     </div>
-                                    <div class="card-body text-dark w-100 word-wrap">
-                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
-                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
+                                    <div class="card-body text-dark w-100 ">
+                                    <a href="albumPage.html?id=${
+                                      musicList3[i].album.id
+                                    }&queryREF=${query1}&album=${
+      musicList3[i].album.title
+    }"><h6 class="m-0 mb-2 sizeTesto text-light text-truncate">${musicList3[
+      i
+    ].album.title.toLowerCase()}</h6></a>
+                                        <a href="artist_page.html?artistId=${
+                                          musicList3[i].artist.id
+                                        }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${
+      musicList3[i].artist.name
+    }</p></a>
                                     </div>
 
                                 </div>
@@ -169,3 +237,19 @@ const writeCard3 = function (musicList3) {
   }
 };
 getMusic3();
+
+//MOSTRA E FAI VEDERE SEARCH INPUT
+
+let searchIcon = document.getElementById("search-btn");
+
+searchIcon.onclick = (event) => {
+  event.preventDefault();
+  inputSearchReference.classList.toggle("d-none");
+};
+
+let mobileSearchBtn = document.getElementById("mobileSearchBtn");
+
+mobileSearchBtn.onclick = (event) => {
+  event.preventDefault();
+  inputSearchReference.classList.toggle("d-none");
+};

@@ -5,15 +5,18 @@ body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
   font-size: 0.9em;
 }
+
+
 
 #leftSidebar,
 #rightSidebar,
 #mainContainer {
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding-bottom: 6rem;
 }
 
 #mainContainer {
@@ -22,13 +25,12 @@ body {
       rgba(0, 0, 0, 1) 0%,
       rgba(34, 34, 34, 1) 70%);
   color: white;
-  padding: 0;
 }
 
 /*
 /* Larghezza */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
 /* Handle */
@@ -40,6 +42,7 @@ body {
 
 ul li {
   line-height: 1.8;
+  font-weight: bold;
 }
 
 li i {
@@ -53,6 +56,7 @@ li span {
 
 #playlist {
   font-size: 0.8em;
+  font-weight: bold;
 }
 
 #playlist a {
@@ -76,7 +80,25 @@ li span {
   justify-content: space-between;
 }
 
+/* SEARCH INPUT */
+
+#searchIcon {
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 0.3em 1em;
+}
+
+#searchContainer {
+  width: 30%;
+}
+
 /* FINE SIDEBAR LEFT */
+
+.arrows {
+  background-color: black;
+  border-radius: 100%;
+}
 
 #miniCard img {
   width: 80px;
@@ -88,7 +110,7 @@ li span {
 }
 
 #preference .card {
-  width: 140px;
+  max-width: 140px;
 }
 
 .card-body {
@@ -122,10 +144,13 @@ li span {
 
 .sizeTesto {
   font-size: 0.8em;
+  font-weight: bolder;
 }
 
+
 .sizeTesto2 {
-  font-size: 0.7em;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 
 /*SIDEBAR DX FRIENDS*/
@@ -301,10 +326,13 @@ input[type="range"]:focus::-moz-range-thumb {
 
 a:link a:visited a:active {
   text-decoration: none;
-
 }
 
 .bi-play-circle::before {
   color: white;
+}
 
+a:link {
+  text-decoration: none;
+  color: white
 }

@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify Clone</title>
+    <!-- SPOTIFY ICON -->
+    <link rel="shortcut icon" href="./assets/image/spotIcon.png" type="image/x-icon">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +47,7 @@
                                 </span>
                             </a></li>
                         <!-- Cerca -->
-                        <li><a id="searchIcon" class="text-decoration-none text-secondary" href=""><i id="search-btn"
+                        <li><a class="text-decoration-none text-secondary" href="" id="search-btn"><i
                                     class="bi bi-search fs fs-4"></i>
                                 <span>
                                     Cerca
@@ -128,20 +130,33 @@
         <div id="mainContainer" class="col mb-5">
             <div class="row">
                 <div class="col d-flex justify-content-between align-items-center mt-4">
-                    <div class="d-flex ms-4">
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-caret-left text-light me-2" viewBox="0 0 16 16">
-                                <path
-                                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
-                            </svg></a>
-                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-caret-right text-light" viewBox="0 0 16 16">
-                                <path
-                                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
-                            </svg></a>
+                    <div class="d-flex ms-4 ">
+                        <a href="#" class="p-2 arrows me-2 text-decoration-none">&nbsp;<svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-left text-light" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                            </svg>&nbsp;</a>
+                        <a href="#" class="p-2 arrows text-decoration-none">&nbsp;<svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-right text-light" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                            </svg>&nbsp;</a>
                     </div>
-                    <div class="me-4">
-                        <div class="dropdown text-bg-dark border border-0">
+                    <!-- SEARCH INPUT MUSIC -->
+
+                    <div id="searchContainer">
+
+                        <input class="d-block d-none" id="searchIcon" type="text" onkeyup="processChange()"
+                            placeholder="Cerca la tua canzone preferita...">
+
+                    </div>
+
+                    <!-- FINE SEARCH INPUT MUSIC -->
+
+                    <div class=" me-4">
+                        <div class="dropdown text-bg-dark border border-0 rounded-circle">
                             <div class="btn btn-dark dropdown-toggle rounded-4" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" selected>
                                 Profiles
@@ -179,16 +194,24 @@
                         </div>
                     </div>
 
+                    <!-- SEARCH INPUT REASERCH -->
+
+                    <div id="searchRef" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+
+                    </div>
+
+                    <!-- FINE SEARCH INPUT REASERCH -->
                     <div class="row mx-auto" id="miniCard">
                         <!-- vrfefdscdscdsdsc -->
                         <h2 class="py-3">Buonasera</h2>
                     </div>
+                    <h4 class="py-3">Altro di ciò che ti piace</h3>
+                        <div id="cardThree"
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-around align-items-center mx-auto mb-5"
+                            id="preference">
 
-                    <div id="cardThree" class="row justify-content-around align-items-center mx-auto mb-5"
-                        id="preference">
-                        <h4 class="py-3">Altro di ciò che ti piace</h3>
 
-                    </div>
+                        </div>
 
 
                 </div>
@@ -211,7 +234,7 @@
     </div> -->
 
         <!-- SEZIONE AMICI CON GLI SVG -->
-        <div id="rightSidebar" class="col col-2 d-none d-xl-block p-2" style="background-color: black; color: gray;">
+        <div id="rightSidebar" class="col col-2 d-none d-xl-block p-3" style="background-color: black; color: gray;">
             <div class="row">
                 <div class="p-2 d-flex justify-content-between">
                     <div>
@@ -321,7 +344,8 @@
                     <div class="row g-0 align-items-center">
                         <!-- ALBUM PHOTO -->
                         <div class="col-3">
-                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px" id="playerSongCover">
+                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px"
+                                id="playerSongCover">
                         </div>
                         <div class="col-9">
                             <div class="card-body px-0 text-light">
@@ -396,7 +420,8 @@
 
                             <!-- ALBUM PHOTO -->
                             <div class="col-3">
-                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover" class="img-fluid rounded-start" width="50px">
+                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover"
+                                    class="img-fluid rounded-start" width="50px">
                             </div>
                             <div class="col-9">
                                 <div class="card-body p-0 text-light">
@@ -429,7 +454,7 @@
                 <i class="px-5 fs-1 bi bi-house-fill "></i>
                 <a href="index.html" class="text-decoration-none"><span class="mobileMenuIconText">Home</span></a>
             </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center" id="mobileSearchBtn">
                 <i class="px-5 fs-1 bi bi-search"></i>
                 <span class="mobileMenuIconText">Search</span>
             </div>
