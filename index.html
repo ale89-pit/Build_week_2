@@ -31,7 +31,7 @@
 
         <div id="leftSidebar" class="col col-2 d-none d-md-block" style="background-color: black; color: gray;">
 
-            <div id="navBar" class="col mx-2">
+            <div id="navBar" class="col mx-4">
 
                 <!-- three dots icon -->
                 <i class="bi bi-three-dots text-light fs fs-2"></i>
@@ -47,7 +47,7 @@
                                 </span>
                             </a></li>
                         <!-- Cerca -->
-                        <li><a class="text-decoration-none text-secondary" href="" id="search-btn"><i
+                        <li><a id="noneRemove" class="text-decoration-none text-secondary" href=""><i
                                     class="bi bi-search fs fs-4"></i>
                                 <span>
                                     Cerca
@@ -146,10 +146,10 @@
                     </div>
                     <!-- SEARCH INPUT MUSIC -->
 
-                    <div id="searchContainer">
+                    <div class="d-none" id="searchContainer">
 
-                        <input class="d-block d-none" id="searchIcon" type="text" onkeyup="processChange()"
-                            placeholder="Cerca la tua canzone preferita...">
+                        <input id="searchIcon" type="search" placeholder="Cosa vuoi ascoltare?">
+                        <i id="biSearch" class="bi bi-search text-dark fs fs-4"></i>
 
                     </div>
 
@@ -201,6 +201,9 @@
                     </div>
 
                     <!-- FINE SEARCH INPUT REASERCH -->
+
+
+                    <!-- CARD SMALL -->
                     <div class="row mx-auto" id="miniCard">
                         <!-- vrfefdscdscdsdsc -->
                         <h2 class="py-3">Buonasera</h2>
@@ -259,7 +262,8 @@
             <!-- 1° CARD DI AMICI -->
             <div class="row friends">
                 <div class="col col-2">
-                    <img src="https://images.wired.it/wp-content/uploads/2016/02/1456307952_spotify-generic.jpg" width="30px" height="30px" alt="cat" class="rounded-5">
+                    <img src="https://images.wired.it/wp-content/uploads/2016/02/1456307952_spotify-generic.jpg"
+                        width="30px" height="30px" alt="cat" class="rounded-5">
                 </div>
                 <div class="col col-10">
                     <div class="d-flex justify-content-between">
@@ -281,7 +285,8 @@
             <!-- 2° CARD DI AMICI -->
             <div class="row friends">
                 <div class="col col-2">
-                    <img src="https://th.bing.com/th/id/OIP.iV670m3AtyfH6tFsiKQHXQHaD5?pid=ImgDet&rs=1" width="30px" height="30px" alt="cat" class="rounded-5">
+                    <img src="https://th.bing.com/th/id/OIP.iV670m3AtyfH6tFsiKQHXQHaD5?pid=ImgDet&rs=1" width="30px"
+                        height="30px" alt="cat" class="rounded-5">
                 </div>
                 <div class="col col-10">
                     <div class="d-flex justify-content-between">
@@ -304,7 +309,8 @@
             <!-- 3° CARD DI AMICI -->
             <div class="row friends">
                 <div class="col col-2">
-                    <img src="https://med.gen.tr/wp-content/uploads/2019/07/spotify-otomatik-video-oynatmayi-nasil-kapatirim.jpg" width="30px" height="30px" alt="cat" class="rounded-5">
+                    <img src="https://med.gen.tr/wp-content/uploads/2019/07/spotify-otomatik-video-oynatmayi-nasil-kapatirim.jpg"
+                        width="30px" height="30px" alt="cat" class="rounded-5">
                 </div>
                 <div class="col col-10">
                     <div class="d-flex justify-content-between">
