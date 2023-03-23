@@ -31,7 +31,7 @@
 
         <div id="leftSidebar" class="col col-2 d-none d-md-block" style="background-color: black; color: gray;">
 
-            <div id="navBar" class="col mx-2">
+            <div id="navBar" class="col mx-4">
 
                 <!-- three dots icon -->
                 <i class="bi bi-three-dots text-light fs fs-2"></i>
@@ -47,7 +47,7 @@
                                 </span>
                             </a></li>
                         <!-- Cerca -->
-                        <li><a class="text-decoration-none text-secondary" href=""><i id="search-btn"
+                        <li><a id="noneRemove" class="text-decoration-none text-secondary" href=""><i
                                     class="bi bi-search fs fs-4"></i>
                                 <span>
                                     Cerca
@@ -144,9 +144,10 @@
                     </div>
                     <!-- SEARCH INPUT MUSIC -->
 
-                    <div id="searchContainer">
+                    <div class="d-none" id="searchContainer">
 
-                        <input class="" id="searchIcon" type="text" onkeyup="processChange()">
+                        <input id="searchIcon" type="search" placeholder="Cosa vuoi ascoltare?">
+                        <i id="biSearch" class="bi bi-search text-dark fs fs-4"></i>
 
                     </div>
 
@@ -198,6 +199,9 @@
                     </div>
 
                     <!-- FINE SEARCH INPUT REASERCH -->
+
+
+                    <!-- CARD SMALL -->
                     <div class="row mx-auto" id="miniCard">
                         <!-- vrfefdscdscdsdsc -->
                         <h2 class="py-3">Buonasera</h2>
@@ -340,7 +344,8 @@
                     <div class="row g-0 align-items-center">
                         <!-- ALBUM PHOTO -->
                         <div class="col-3">
-                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px" id="playerSongCover">
+                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px"
+                                id="playerSongCover">
                         </div>
                         <div class="col-9">
                             <div class="card-body px-0 text-light">
@@ -415,7 +420,8 @@
 
                             <!-- ALBUM PHOTO -->
                             <div class="col-3">
-                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover" class="img-fluid rounded-start" width="50px">
+                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover"
+                                    class="img-fluid rounded-start" width="50px">
                             </div>
                             <div class="col-9">
                                 <div class="card-body p-0 text-light">
