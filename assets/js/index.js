@@ -218,8 +218,12 @@ let searchIcon = document.getElementById('search-btn');
 
 searchIcon.onclick = (event) => {
   event.preventDefault();
-  // inputSearchReference.classList.remove('d-none');
-  // inputSearchReference.classList.add('d-block');
   inputSearchReference.classList.toggle('d-none');
-  
+}
+
+let mobileSearchBtn = document.getElementById('mobileSearchBtn');
+
+mobileSearchBtn.onclick = (event) => {
+  event.preventDefault();
+  inputSearchReference.classList.toggle('d-none');
 }
