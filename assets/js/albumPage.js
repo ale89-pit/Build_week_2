@@ -34,10 +34,13 @@ const writeCard2 = function (tracklist) {
    <div class="col-8 noSfo">
        <div class="card-body">
         <p> ALBUM <p>
-           <h5 class="card-title display-1 fw-bold">${element.album.title}</h5>
+          
+           <h5 class="card-title display-1 fw-bold text-truncate">${element.album.title}</h5>
+           <a href="artist_page.html?artistId=${element.artist.id}">
            <p class="card-text">
                <small class="font-weight-bold">${element.artist.name}</small>
            </p>
+           </a>
        </div>
       </div>
      </div>`;
@@ -137,7 +140,7 @@ const playSong = async function (id) {
       let mobileTitle = document.getElementById("mobilePlayerSongTitle");
       mobileCover.setAttribute("src", song.album.cover);
       mobileTitle.innerHTML = song.title;
-
+      let currentSong = localStorage.setItem('song', JSON.stringify(song.id));
       // Riproduci il suono
 
       console.log(song);

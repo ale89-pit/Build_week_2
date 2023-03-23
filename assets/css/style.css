@@ -1,3 +1,5 @@
+/* GENERALI */
+
 html,
 body {
   width: 100%;
@@ -20,20 +22,18 @@ body {
 }
 
 #mainContainer {
-  background: rgb(0, 0, 0);
   background: linear-gradient(360deg,
       rgba(0, 0, 0, 1) 0%,
       rgba(34, 34, 34, 1) 70%);
   color: white;
 }
 
-/*
-/* Larghezza */
+/* SCROLL BAR */
+
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(100, 100, 100);
 }
@@ -45,12 +45,11 @@ ul li {
   font-weight: bold;
 }
 
-li i {
+li i, li span {
   color: rgb(188, 188, 188);
 }
 
 li span {
-  color: rgb(188, 188, 188);
   margin-left: 17px;
 }
 
@@ -95,6 +94,8 @@ li span {
 
 /* FINE SIDEBAR LEFT */
 
+/* HOME */
+
 .arrows {
   background-color: black;
   border-radius: 100%;
@@ -128,7 +129,6 @@ li span {
 }
 
 .bigCard {
-  background: rgb(0, 0, 0);
   background: linear-gradient(10deg,
       rgba(0, 0, 0, 1) 0%,
       rgba(34, 34, 34, 1) 84%);
@@ -147,11 +147,12 @@ li span {
   font-weight: bolder;
 }
 
-
 .sizeTesto2 {
   font-size: 0.8em;
   text-decoration: none;
 }
+
+/* FINE HOME */
 
 /*SIDEBAR DX FRIENDS*/
 .friends:hover{
@@ -210,12 +211,12 @@ input[type="range"] {
   width: 19.5rem;
 }
 
-/* Removes default focus */
+/* Rimuovi Focus di default */
 input[type="range"]:focus {
   outline: none;
 }
 
-/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/******** Chrome, Safari, Opera, Edge e Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
   background-color: #c2c2c2;
@@ -330,6 +331,7 @@ input[type="range"]:focus::-moz-range-thumb {
 
 a:link a:visited a:active {
   text-decoration: none;
+  color: white;
 }
 
 .bi-play-circle::before {
@@ -338,5 +340,5 @@ a:link a:visited a:active {
 
 a:link {
   text-decoration: none;
-  color: white
+  color: white;
 }
