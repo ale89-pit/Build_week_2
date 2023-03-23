@@ -202,7 +202,7 @@ const writeCard3 = function (musicList3) {
                                         <img src="${musicList3[i].artist.picture_medium}" alt="" class="img-fluid" >
                                     </div>
                                     <div class="card-body text-dark w-100 word-wrap">
-                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title}</h6>
+                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicList3[i].album.title.toLowerCase()}</h6>
                                         <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicList3[i].artist.name}</p></a>
                                     </div>
 
@@ -211,3 +211,15 @@ const writeCard3 = function (musicList3) {
   }
 };
 getMusic3();
+
+//MOSTRA E FAI VEDERE SEARCH INPUT
+
+let searchIcon = document.getElementById('search-btn');
+
+searchIcon.onclick = (event) => {
+  event.preventDefault();
+  // inputSearchReference.classList.remove('d-none');
+  // inputSearchReference.classList.add('d-block');
+  inputSearchReference.classList.toggle('d-none');
+  
+}
