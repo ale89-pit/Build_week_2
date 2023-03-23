@@ -13,6 +13,59 @@ let audio;
 let pauseButton = document.getElementById("pauseButton");
 console.log(coloredBack);
 
+
+let showSongInPlayer = async (songId) => {
+  try {
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/track/" + songId
+    );
+    if (response.ok) {
+      let song = await response.json();
+      console.log("canzone:", song);
+      let cover = document.getElementById("playerSongCover");
+      let title = document.getElementById("playerSongTitle");
+      let artist = document.getElementById("playerSongArtist");
+      let length = document.getElementById("songLength");
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerText = song.title;
+      artist.innerText = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerText = duration;
+      let mobileCover = document.getElementById("mobilePlayerSongCover");
+      let mobileTitle = document.getElementById("mobilePlayerSongTitle");
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerText = song.title;
+      audio = new Audio(song.preview);
+      audio.play();
+      // playButton.classList.add("d-none");
+      // mobilePlayButton.classList.add('d-none');
+      // pauseButton.classList.remove("d-none");
+      // mobilePauseButton.classList.remove('d-none');
+      let currentSong = localStorage.setItem('song', JSON.stringify(song.id));
+    } else {
+      return new Error("errore nella fetch", response.status);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+playButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
+pauseButton.addEventListener("click", function () {
+  audio.pause();
+  pauseButton.classList.add("d-none");
+  playButton.classList.remove("d-none");
+});
+
+
 const writeCard2 = function (tracklist) {
   tracklist.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light">
@@ -40,32 +93,25 @@ const writeCard2 = function (tracklist) {
     let seconds = element.duration % 60;
     let duration = `${minutes}:${seconds}`;
     if (element.album.title == queryAlbum) {
+      console.log('element: ', element);
       songsList.innerHTML += `
       <div class="row align-items-center my-3">
                         <div class="col d-flex align-items-center flex-grow-1">
                             <span class="mx-3">${index + 1}</span>
                             <div class="card artistSongCard">
-                                <div class="row g-0 align-items-center">
+                                <div class="row g-0 align-items-center song" onclick="showSongInPlayer(${element.id})">
                                     <div class="col-2">
-                                        <img src="${
-                                          element.album.cover_big
-                                        }" class="img-fluid" alt="...">
+                                        <img src="${element.album.cover_big
+        }" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-10">
                                         <div class="card-body py-0 d-flex me-2">
                                         <div class="w-50 w-md-75 d-flex justify-content-between align-items-center>
-                                            <p class="card-text m-0 songTitle">${
-                                              element.title
-                                            }</p>
-                                           <a href="javascript:void()" onclick=playSong(${
-                                             element.id
-                                           }) <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
-</svg></a></div>
-                                            <span class="streams d-md-none">${
-                                              element.rank
-                                            }</span>
+                                            <p class="card-text m-0 songTitle">${element.title
+        }</p>
+                                           </div>
+                                            <span class="streams d-md-none">${element.rank
+        }</span>
                                         </div>
                                     </div>
                                 </div>
