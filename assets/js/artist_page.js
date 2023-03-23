@@ -5,22 +5,20 @@ const URLRequest = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 let artistId = new URLSearchParams(window.location.search).get("artistId");
 
 console.log("artistId", artistId);
-var audio = new Audio(
-  "https://cdns-preview-a.dzcdn.net/stream/c-a67931370ebfabd0f1018d086726ca0e-2.mp3"
-);
+
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
-playButton.addEventListener("click", function () {
-  // Riproduci il suono
-  audio.play();
-  playButton.classList.add("d-none");
-  pauseButton.classList.remove("d-none");
-});
-pauseButton.addEventListener("click", function () {
-  audio.pause();
-  pauseButton.classList.add("d-none");
-  playButton.classList.remove("d-none");
-});
+let mobilePlayButton = document.getElementById("mobilePlayBtn");
+let mobilePauseButton = document.getElementById("mobilePauseBtn");
+
+let audio;
+
+let cover = document.getElementById("playerSongCover");
+let title = document.getElementById("playerSongTitle");
+let artist = document.getElementById("playerSongArtist");
+let length = document.getElementById("songLength");
+let mobileCover = document.getElementById("mobilePlayerSongCover");
+let mobileTitle = document.getElementById("mobilePlayerSongTitle");
 
 let showSongInPlayer = async (songId) => {
   try {
@@ -46,6 +44,13 @@ let showSongInPlayer = async (songId) => {
       let mobileTitle = document.getElementById("mobilePlayerSongTitle");
       mobileCover.setAttribute("src", song.album.cover);
       mobileTitle.innerText = song.title;
+      audio = new Audio(song.preview);
+      audio.play();
+      playButton.classList.add("d-none");
+      mobilePlayButton.classList.add('d-none');
+      pauseButton.classList.remove("d-none");
+      mobilePauseButton.classList.remove('d-none');
+      let currentSong = localStorage.setItem('song', JSON.stringify(song.id));
     } else {
       return new Error("errore nella fetch", response.status);
     }
@@ -53,6 +58,30 @@ let showSongInPlayer = async (songId) => {
     console.log(error);
   }
 };
+
+playButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
+pauseButton.addEventListener("click", function () {
+  audio.pause();
+  pauseButton.classList.add("d-none");
+  playButton.classList.remove("d-none");
+});
+
+mobilePlayButton.addEventListener("click", function () {
+  // Riproduci il suono
+  audio.play();
+  mobilePlayButton.classList.add("d-none");
+  mobilePauseButton.classList.remove("d-none");
+});
+mobilePauseButton.addEventListener("click", function () {
+  audio.pause();
+  mobilePauseButton.classList.add("d-none");
+  mobilePlayButton.classList.remove("d-none");
+});
 
 let showSongs = (firstFiveSongs) => {
   let songCol = document.getElementById("songCol");
@@ -173,3 +202,42 @@ let findArtist = async () => {
 };
 
 findArtist();
+
+
+//FOOTER
+
+let showLocalSong = async (songId) => {
+  try{
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + songId);
+    if(response.ok){
+      let song = await response.json();
+      console.log('Risultato song:', song);
+      console.log('song.title:', song.title);
+      console.log('song.name:', song.artist.name);
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerText = song.title;
+      artist.innerText = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerText = duration;
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerText = song.title;
+      audio = new Audio(song.preview);
+    }
+    else{
+      return new Error ('Errore nella fetch: ', response.status);
+    }
+
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+
+if (localStorage.getItem('song')) {
+  let songId = JSON.parse(localStorage.getItem('song'));
+  showLocalSong(songId);
+}
