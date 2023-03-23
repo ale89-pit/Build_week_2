@@ -147,7 +147,7 @@
                 </div>
             </div>
             <p class="d-md-none d-block streams my-3 px-2">3.455.345 ascoltatori mensili</p>
-            
+
             <!-- PLAY + FOLLOWING + 3DOTS -->
             <div class="d-flex align-items-center my-3">
                 <i class="mx-2 bi bi-play-circle-fill playButtonGreen"></i>
@@ -321,12 +321,13 @@
                     <div class="row g-0 align-items-center">
                         <!-- ALBUM PHOTO -->
                         <div class="col-3">
-                            <img src="http://www.placekitten.com/80" id="playerSongCover" class="img-fluid p-2" width="80px">
+                            <img src="http://www.placekitten.com/80" class="img-fluid p-3" width="80px"
+                                id="playerSongCover">
                         </div>
                         <div class="col-9">
                             <div class="card-body px-0 text-light">
                                 <p class="card-title m-0 fw-bold" id="playerSongTitle">Song</p>
-                                <p class="card-text" ><small id="playerSongArtist">Artist</small></p>
+                                <p class="card-text"><small id="playerSongArtist">Artist</small></p>
                             </div>
                         </div>
                     </div>
@@ -340,7 +341,8 @@
                     <div class="col d-flex justify-content-center align-items-center">
                         <i class="greenIcon px-3 bi bi-shuffle"></i>
                         <i class="px-3 bi bi-skip-backward-fill"></i>
-                        <i class="bi bi-play-circle-fill fs-2 text-light" id="playButton"></i>
+                        <i class="bi bi-play-circle-fill " id="playButton"></i>
+                        <i class="bi bi-pause-circle fs-2 text-light d-none " id="pauseButton"></i>
                         <i class="px-3 bi bi-skip-forward-fill"></i>
                         <i class="greenIcon px-3 bi bi-repeat-1"></i>
                     </div>
@@ -396,7 +398,8 @@
 
                             <!-- ALBUM PHOTO -->
                             <div class="col-3">
-                                <img src="http://www.placekitten.com/50" class="img-fluid rounded-start" width="50px" id="mobilePlayerSongCover">
+                                <img src="http://www.placekitten.com/50" id="mobilePlayerSongCover"
+                                    class="img-fluid rounded-start" width="50px">
                             </div>
                             <div class="col-9">
                                 <div class="card-body p-0 text-light">
@@ -445,6 +448,7 @@
         <!-- FINE MOBILE MENU -->
 
     </footer>
+
     <!-- FINE MOBILE FOOTER -->
 
 

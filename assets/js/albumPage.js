@@ -9,8 +9,8 @@ let firstCard = document.querySelector("#heroAlbum .card");
 let songsList = document.querySelector(".songsList");
 let coloredBack = document.getElementsByClassName("hero");
 let heroBg = document.querySelector(".heroBg");
-
-
+let audio;
+let pauseButton = document.getElementById("pauseButton");
 console.log(coloredBack);
 
 const writeCard2 = function (tracklist) {
@@ -20,6 +20,7 @@ const writeCard2 = function (tracklist) {
     <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
     </a>  
    </div>
+   
    <div class="col-8 noSfo">
        <div class="card-body">
         <p> ALBUM <p>
@@ -42,16 +43,29 @@ const writeCard2 = function (tracklist) {
       songsList.innerHTML += `
       <div class="row align-items-center my-3">
                         <div class="col d-flex align-items-center flex-grow-1">
-                            <span class="mx-3">${index+1}</span>
+                            <span class="mx-3">${index + 1}</span>
                             <div class="card artistSongCard">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="${element.album.cover_big}" class="img-fluid" alt="...">
+                                        <img src="${
+                                          element.album.cover_big
+                                        }" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-10">
-                                        <div class="card-body py-0">
-                                            <p class="card-text m-0 songTitle">${element.title}</p>
-                                            <span class="streams d-md-none">${element.rank}</span>
+                                        <div class="card-body py-0 d-flex me-2">
+                                        <div class="w-50 w-md-75 d-flex justify-content-between align-items-center>
+                                            <p class="card-text m-0 songTitle">${
+                                              element.title
+                                            }</p>
+                                           <a href="javascript:void()" onclick=playSong(${
+                                             element.id
+                                           }) <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+</svg></a></div>
+                                            <span class="streams d-md-none">${
+                                              element.rank
+                                            }</span>
                                         </div>
                                     </div>
                                 </div>
@@ -67,8 +81,6 @@ const writeCard2 = function (tracklist) {
     }
   });
 };
-
-
 
 const shownAlbum = async function () {
   let response = await fetch(URLRequest + idRef);
@@ -86,3 +98,54 @@ const shownAlbum = async function () {
 //   let response = await listTrack2.json();
 // };
 shownAlbum();
+
+const playSong = async function (id) {
+  try {
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/track/" + id
+    );
+    if (response.ok) {
+      let song = await response.json();
+      console.log("canzone:", song);
+
+      audio = new Audio(`${song.preview}`);
+      audio.play();
+      playButton.classList.add("d-none");
+      pauseButton.classList.remove("d-none");
+      let cover = document.getElementById("playerSongCover");
+      let title = document.getElementById("playerSongTitle");
+      let artist = document.getElementById("playerSongArtist");
+      let length = document.getElementById("songLength");
+      cover.removeAttribute("src");
+      cover.setAttribute("src", song.album.cover);
+      title.innerHTML = song.title;
+      artist.innerHTML = song.artist.name;
+      let minutes = Math.floor(song.duration / 60);
+      let seconds = song.duration % 60;
+      let duration = `${minutes}:${seconds}`;
+      length.innerHTML = duration;
+      let mobileCover = document.getElementById("mobilePlayerSongCover");
+      let mobileTitle = document.getElementById("mobilePlayerSongTitle");
+      mobileCover.setAttribute("src", song.album.cover);
+      mobileTitle.innerHTML = song.title;
+
+      // Riproduci il suono
+
+      console.log(song);
+    } else {
+      return new Error("errore nella fetch", response.status);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+pauseButton.addEventListener("click", function () {
+  audio.pause();
+  playButton.classList.remove("d-none");
+  pauseButton.classList.add("d-none");
+});
+playButton.addEventListener("click", function () {
+  audio.play();
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
