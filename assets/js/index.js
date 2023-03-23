@@ -9,6 +9,8 @@ let firstCard = document.querySelector("#mainContainer .card");
 console.log(firstCard);
 let miniCard = document.getElementById("miniCard");
 
+//FETCH PER LA CARD GRANDE
+
 const getMusic = async function () {
   try {
     let response = await fetch(URLRequest + query1);
@@ -35,7 +37,7 @@ const getMusic = async function () {
 const inputSearchReference = document.getElementById("searchIcon");
 let musicListSearch;
 
-// FUNZIONE writeCardSearch
+// FUNZIONE writeCardSearch SCRIVE LE CARD IN RICERCA
 const searchRef = document.getElementById("searchRef");
 
 inputSearchReference.addEventListener("keyup", (e, musicListSearch) => {
@@ -82,6 +84,8 @@ const writeCardSearch = function (musicListSearch) {
  </div>`;
 };
 
+//FETCH SUI RISULTATI DELLA RICERCA
+
 const searchMusic = async function () {
   try {
     let response = await fetch(
@@ -106,7 +110,8 @@ const searchMusic = async function () {
   }
 };
 
-// SIDEBAR SEARCH LEFT END
+// SIDEBAR SEARCH LEFT END 
+// SCRIVE CARD PRINCIPALE (ALBUM)
 
 const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
@@ -154,6 +159,9 @@ const getMusic2 = async function () {
 };
 
 getMusic2();
+
+//PARTE BUONASERA
+
 const writeSecondRow = function (musicList2) {
   for (let i = 0; i < 6; i++) {
     miniCard.innerHTML += `<div class="col col-6 col-lg-4">
@@ -173,8 +181,11 @@ const writeSecondRow = function (musicList2) {
   }
 };
 
+//ALTRO CHE TI POTREBBE PIACERE
+
 let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let query3 = "salmo&type=artist";
+
 
 const getMusic3 = async function () {
   try {
