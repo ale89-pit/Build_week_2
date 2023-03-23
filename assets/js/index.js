@@ -30,6 +30,84 @@ const getMusic = async function () {
   }
 };
 
+// SIDEBAR SEARCH LEFT
+
+const inputSearchReference = document.getElementById("searchIcon");
+let musicListSearch;
+
+// FUNZIONE writeCardSearch
+const searchRef = document.getElementById("searchRef");
+
+inputSearchReference.addEventListener("keyup", (e, musicListSearch) => {
+  searchMusic();
+  console.log("searchMusic()");
+  console.log("ho schiacciato il bottone");
+});
+
+const writeCardSearch = function (musicListSearch) {
+  searchRef.innerHTML = "";
+  console.log(musicListSearch);
+  console.log(searchRef);
+  for (let i = 0; i < musicListSearch.length; i++) {
+    searchRef.innerHTML += `<div class="col col-2 d-flex justify-content-center align-items-center ">
+                                <div class="card smallCards p-2">
+                                    <div class="card-img-top" >
+                                        <img src="${musicListSearch[i].album.cover}" alt="" class="img-fluid" >
+                                    </div>
+                                    <div class="card-body text-dark w-100 word-wrap">
+                                        <h6 class="m-0 mb-2 sizeTesto text-light">${musicListSearch[i].title}</h6>
+                                        <a href="artist_page.html?artistId=${musicListSearch[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light ">${musicListSearch[i].artist.name}</p></a>
+                                    </div>
+
+                                </div>
+                            </div>`;
+  }
+  firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
+  <div class="col-4 ps-0">
+  <a href="albumPage.html?id=${musicListSearch[0].album.id}&queryREF=${query1}&album=${musicListSearch[0].album.title}">
+      <img src="${musicListSearch[0].album.cover_medium}" class="img-fluid rounded-4 p-3 m-0" alt="..." />
+   </a>   
+  </div>
+  <div class="col-8">
+      <div class="card-body">
+          <h5 class="card-title display-1 fw-bold">${musicListSearch[0].album.title}</h5>
+          <p class="card-text">
+          ${musicListSearch[0].artist.name}
+          </p>
+          <p class="card-text">
+              <small class="opacity-50">Ascolta la canzone di ${musicListSearch[0].artist.name}</small>
+          </p>
+      </div>
+  </div>
+ </div>`;
+};
+
+const searchMusic = async function () {
+  try {
+    let response = await fetch(
+      URLRequest + inputSearchReference.value + "&" + "type=album"
+    );
+    if (response.ok) {
+      musicListSearch = await response.json();
+      console.log(musicListSearch);
+      musicListSearch = musicListSearch.data;
+
+      writeCardSearch(musicListSearch);
+
+      console.log(musicListSearch);
+    } else {
+      return new Error(
+        "Non riesco a recuperare la traccia, errore!",
+        response.status
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// SIDEBAR SEARCH LEFT END
+
 const writeCard = function (musicList, query1) {
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
@@ -94,42 +172,6 @@ const writeSecondRow = function (musicList2) {
     </div>`;
   }
 };
-
-// BARRA DI RICERCA
-// Dichiaro variabile per input di ricerca
-let searchInputReference = document.getElementById("searchIcon");
-let input;
-
-// collego l'evento click alla "button" per l'input search
-searchInputReference.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  // piccola animazione per far comparire il campo di input da icona a text input in dissolvenza. . .
-  let inpuText = document.createElement("input");
-  inpuText.placeholder = "inserisci testo";
-  inpuText.style.animation = "slideIn 0.5s forwards";
-  inpuText.style.backgroundColor = "black";
-  inpuText.style.border = "none";
-  inpuText.style.color = "white";
-  inpuText.style.outlineStyle = "none";
-  inpuText.style.borderBottom = "1px solid gray";
-  inpuText.style.transformOrigin = "top right";
-  searchInputReference.replaceWith(inpuText);
-});
-let fadeAnimate = `@keyframes slideIn {
-  from {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}`;
-
-let inputFade = document.createElement("style");
-inputFade.innerHTML = fadeAnimate;
-document.head.appendChild(inputFade);
 
 let URLRequest3 = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 let query3 = "salmo&type=artist";

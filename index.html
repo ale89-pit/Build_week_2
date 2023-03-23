@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify Clone</title>
+    <!-- SPOTIFY ICON -->
+    <link rel="shortcut icon" href="./assets/image/spotIcon.png" type="image/x-icon">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +47,7 @@
                                 </span>
                             </a></li>
                         <!-- Cerca -->
-                        <li><a id="searchIcon" class="text-decoration-none text-secondary" href=""><i id="search-btn"
+                        <li><a class="text-decoration-none text-secondary" href=""><i id="search-btn"
                                     class="bi bi-search fs fs-4"></i>
                                 <span>
                                     Cerca
@@ -140,7 +142,17 @@
                                     d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
                             </svg></a>
                     </div>
-                    <div class="me-4">
+                    <!-- SEARCH INPUT MUSIC -->
+
+                    <div id="searchContainer">
+
+                        <input class="" id="searchIcon" type="text" onkeyup="processChange()">
+
+                    </div>
+
+                    <!-- FINE SEARCH INPUT MUSIC -->
+
+                    <div class=" me-4">
                         <div class="dropdown text-bg-dark border border-0">
                             <div class="btn btn-dark dropdown-toggle rounded-4" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" selected>
@@ -179,6 +191,13 @@
                         </div>
                     </div>
 
+                    <!-- SEARCH INPUT REASERCH -->
+
+                    <div id="searchRef" class="row">
+
+                    </div>
+
+                    <!-- FINE SEARCH INPUT REASERCH -->
                     <div class="row mx-auto" id="miniCard">
                         <!-- vrfefdscdscdsdsc -->
                         <h2 class="py-3">Buonasera</h2>

@@ -79,6 +79,9 @@ li span {
   display: flex;
   justify-content: space-between;
 }
+
+/* SEARCH INPUT */
+
 /* FINE SIDEBAR LEFT */
 
 #miniCard img {
@@ -298,4 +301,12 @@ input[type="range"]:focus::-moz-range-thumb {
 
 .song:hover {
   cursor: pointer;
+}
+
+a:link a:visited a:active {
+  text-decoration: none;
+}
+
+.bi-play-circle::before {
+  color: white;
 }
