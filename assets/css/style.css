@@ -98,6 +98,7 @@ li span:hover {
   border-radius: 50px;
   border: none;
   padding: 0.3em 1em;
+  outline: none;
 }
 
 #searchContainer {
