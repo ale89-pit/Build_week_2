@@ -52,6 +52,12 @@ li span {
 
 li span {
   margin-left: 17px;
+  transition: 0.4s ease;
+
+}
+
+li span:hover {
+  color: white;
 }
 
 #playlist {
@@ -63,6 +69,11 @@ li span {
   color: gray;
   text-decoration: none;
   line-height: 2.5;
+  transition: 0.4s ease;
+}
+
+#playlist a:hover {
+  color: white;
 }
 
 #playlist a:nth-child(9) {
@@ -96,6 +107,11 @@ li span {
 /* FINE SIDEBAR LEFT */
 .logo img {
   width: 150px;
+}
+
+li i:hover {
+  color: white;
+  transition: 0.4s ease;
 }
 
 /* HOME */
@@ -140,6 +156,12 @@ li span {
 
 .smallCards {
   background-color: rgb(44, 44, 44);
+  transition: background-color 0.8s ease;
+}
+
+.smallCards:hover {
+  background-color: rgb(107, 106, 106);
+
 }
 
 #imgBigCard {
