@@ -26,7 +26,6 @@ let pauseButton = document.getElementById("pauseButton");
 let mobilePlayButton = document.getElementById("mobilePlayBtn");
 let mobilePauseButton = document.getElementById("mobilePauseBtn");
 
-
 //FETCH PER LA CARD GRANDE
 
 const getMusic = async function () {
@@ -128,6 +127,15 @@ const searchMusic = async function () {
   }
 };
 
+const cerca = document.getElementById("search-btn");
+
+const searchContainer = document.getElementById("searchContainer");
+
+cerca.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchContainer.classList.toggle("d-none");
+  searchContainer.classList.toggle("d-block");
+});
 // SIDEBAR SEARCH LEFT END
 // SCRIVE CARD PRINCIPALE (ALBUM)
 
@@ -227,20 +235,11 @@ const writeCard3 = function (musicList3) {
     cardThree.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicList3[i].album.id
-      }&queryREF=${query1}&album=${musicList3[i].album.title
-      }"> <img src="${musicList3[i].album.cover_medium
-      }" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"> <img src="${musicList3[i].album.cover_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 ">
-                                    <a href="albumPage.html?id=${musicList3[i].album.id
-      }&queryREF=${query1}&album=${musicList3[i].album.title
-      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList3[
-        i
-      ].album.title}</h6></a>
-                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id
-      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList3[i].artist.name
-      }</p></a>
+                                    <a href="albumPage.html?id=${musicList3[i].album.id}&queryREF=${query1}&album=${musicList3[i].album.title}"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList3[i].album.title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList3[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList3[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
@@ -275,20 +274,11 @@ const writeCard4 = function (musicList4) {
     cardFour.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicList4[i].album.id
-      }&queryREF=${query1}&album=${musicList4[i].album.title
-      }"> <img src="${musicList4[i].album.cover_medium
-      }" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${musicList4[i].album.id}&queryREF=${query1}&album=${musicList4[i].album.title}"> <img src="${musicList4[i].album.cover_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 ">
-                                    <a href="albumPage.html?id=${musicList4[i].album.id
-      }&queryREF=${query1}&album=${musicList4[i].album.title
-      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList4[
-        i
-      ].album.title}</h6></a>
-                                        <a href="artist_page.html?artistId=${musicList4[i].artist.id
-      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList4[i].artist.name
-      }</p></a>
+                                    <a href="albumPage.html?id=${musicList4[i].album.id}&queryREF=${query1}&album=${musicList4[i].album.title}"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList4[i].album.title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList4[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList4[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
@@ -324,20 +314,11 @@ const writeCard5 = function (musicList5) {
     cardFive.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicList5[i].album.id
-      }&queryREF=${query1}&album=${musicList5[i].album.title
-      }"> <img src="${musicList5[i].album.cover_medium
-      }" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${musicList5[i].album.id}&queryREF=${query1}&album=${musicList5[i].album.title}"> <img src="${musicList5[i].album.cover_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 ">
-                                    <a href="albumPage.html?id=${musicList5[i].album.id
-      }&queryREF=${query1}&album=${musicList5[i].album.title
-      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList5[
-        i
-      ].album.title}</h6></a>
-                                        <a href="artist_page.html?artistId=${musicList5[i].artist.id
-      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList5[i].artist.name
-      }</p></a>
+                                    <a href="albumPage.html?id=${musicList5[i].album.id}&queryREF=${query1}&album=${musicList5[i].album.title}"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList5[i].album.title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList5[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList5[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
@@ -373,20 +354,11 @@ const writeCard6 = function (musicList6) {
     cardSix.innerHTML += `<div class="col my-1 d-flex justify-content-center align-items-center ">
                                 <div class="card smallCards p-2">
                                     <div class="card-img-top" >
-                                    <a href="albumPage.html?id=${musicList6[i].album.id
-      }&queryREF=${query1}&album=${musicList6[i].album.title
-      }"> <img src="${musicList6[i].album.cover_medium
-      }" alt="" class="img-fluid" ></a>
+                                    <a href="albumPage.html?id=${musicList6[i].album.id}&queryREF=${query1}&album=${musicList6[i].album.title}"> <img src="${musicList6[i].album.cover_medium}" alt="" class="img-fluid" ></a>
                                     </div>
                                     <div class="card-body text-dark w-100 ">
-                                    <a href="albumPage.html?id=${musicList6[i].album.id
-      }&queryREF=${query1}&album=${musicList6[i].album.title
-      }"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList6[
-        i
-      ].title}</h6></a>
-                                        <a href="artist_page.html?artistId=${musicList6[i].artist.id
-      }"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList6[i].artist.name
-      }</p></a>
+                                    <a href="albumPage.html?id=${musicList6[i].album.id}&queryREF=${query1}&album=${musicList6[i].album.title}"><h6 class="m-0 mb-2 pt-3 sizeTesto text-light text-truncate">${musicList6[i].title}</h6></a>
+                                        <a href="artist_page.html?artistId=${musicList6[i].artist.id}"><p class="opacity-50 sizeTesto2 text-light text-truncate">${musicList6[i].artist.name}</p></a>
                                     </div>
 
                                 </div>
@@ -395,32 +367,18 @@ const writeCard6 = function (musicList6) {
 };
 getMusic6();
 
-//MOSTRA E FAI VEDERE SEARCH INPUT
-
-let searchIcon = document.getElementById("search-btn");
-
-searchIcon.onclick = (event) => {
-  event.preventDefault();
-  inputSearchReference.classList.toggle("d-none");
-};
-
-let mobileSearchBtn = document.getElementById("mobileSearchBtn");
-
-mobileSearchBtn.onclick = (event) => {
-  event.preventDefault();
-  inputSearchReference.classList.toggle("d-none");
-};
-
 //FOOTER
 
 let showLocalSong = async (songId) => {
-  try{
-    let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + songId);
-    if(response.ok){
+  try {
+    let response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/track/" + songId
+    );
+    if (response.ok) {
       let song = await response.json();
-      console.log('Risultato song:', song);
-      console.log('song.title:', song.title);
-      console.log('song.name:', song.artist.name);
+      console.log("Risultato song:", song);
+      console.log("song.title:", song.title);
+      console.log("song.name:", song.artist.name);
       cover.removeAttribute("src");
       cover.setAttribute("src", song.album.cover);
       title.innerText = song.title;
@@ -432,20 +390,16 @@ let showLocalSong = async (songId) => {
       mobileCover.setAttribute("src", song.album.cover);
       mobileTitle.innerText = song.title;
       audio = new Audio(song.preview);
+    } else {
+      return new Error("Errore nella fetch: ", response.status);
     }
-    else{
-      return new Error ('Errore nella fetch: ', response.status);
-    }
-
-  }
-  catch(error){
+  } catch (error) {
     console.log(error);
   }
-}
+};
 
-
-if (localStorage.getItem('song')) {
-  let songId = JSON.parse(localStorage.getItem('song'));
+if (localStorage.getItem("song")) {
+  let songId = JSON.parse(localStorage.getItem("song"));
   showLocalSong(songId);
 }
 

@@ -11,8 +11,6 @@ body {
   font-size: 0.9em;
 }
 
-
-
 #leftSidebar,
 #rightSidebar,
 #mainContainer {
@@ -22,9 +20,11 @@ body {
 }
 
 #mainContainer {
-  background: linear-gradient(360deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(34, 34, 34, 1) 70%);
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(34, 34, 34, 1) 70%
+  );
   color: white;
 }
 
@@ -40,17 +40,34 @@ body {
 
 /* SIDEBAR LEFT */
 
+.logo img {
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 ul li {
   line-height: 1.8;
   font-weight: bold;
 }
 
-li i, li span {
+li i:hover {
+  color: white;
+  transition: 0.4s ease;
+}
+
+li i,
+li span {
   color: rgb(188, 188, 188);
 }
 
 li span {
   margin-left: 17px;
+  transition: 0.4s ease;
+}
+
+li span:hover {
+  color: white;
 }
 
 #playlist {
@@ -62,6 +79,11 @@ li span {
   color: gray;
   text-decoration: none;
   line-height: 2.5;
+  transition: 0.4s ease;
+}
+
+#playlist a:hover {
+  color: white;
 }
 
 #playlist a:nth-child(9) {
@@ -81,17 +103,30 @@ li span {
 
 /* SEARCH INPUT */
 
+#searchContainer {
+  position: relative;
+  display: inline-block;
+  margin-right: 45%;
+  width: 30%;
+}
+
 #searchIcon {
+  padding-left: 200px;
+  height: 40px;
+  outline: none;
+  font-size: 10px;
   width: 100%;
   border-radius: 50px;
   border: none;
   padding: 0.3em 1em;
 }
 
-#searchContainer {
-  width: 30%;
+#biSearch {
+  position: absolute;
+  left: 10px;
+  top: 55%;
+  transform: translateY(-50%);
 }
-
 /* FINE SIDEBAR LEFT */
 
 /* HOME */
@@ -129,13 +164,20 @@ li span {
 }
 
 .bigCard {
-  background: linear-gradient(10deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(34, 34, 34, 1) 84%);
+  background: linear-gradient(
+    10deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(34, 34, 34, 1) 84%
+  );
 }
 
 .smallCards {
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(44, 44, 44, 0.385);
+  transition: background-color 0.8s ease;
+}
+
+.smallCards:hover {
+  background-color: rgb(107, 106, 106);
 }
 
 #imgBigCard {
@@ -155,7 +197,7 @@ li span {
 /* FINE HOME */
 
 /*SIDEBAR DX FRIENDS*/
-.friends:hover{
+.friends:hover {
   color: white;
 }
 
@@ -184,9 +226,11 @@ li span {
 
 #mobileFooter {
   background: rgb(50, 50, 50);
-  background: linear-gradient(180deg,
-      rgba(50, 50, 50, 0) 0%,
-      rgba(0, 0, 0, 1) 98%);
+  background: linear-gradient(
+    180deg,
+    rgba(50, 50, 50, 0) 0%,
+    rgba(0, 0, 0, 1) 98%
+  );
 }
 
 #mobileFooterContainer {
@@ -300,7 +344,6 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 @media screen and (max-width: 576px) {
-
   .artistName,
   .albumName {
     font-size: 2.5rem;
