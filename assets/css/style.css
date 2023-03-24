@@ -157,6 +157,7 @@ li span {
 /*SIDEBAR DX FRIENDS*/
 .friends:hover{
   color: white;
+  cursor: pointer;
 }
 
 /* FOOTER */
