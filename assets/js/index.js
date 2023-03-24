@@ -149,7 +149,7 @@ const writeCard = function (musicList, query1) {
  </div>
  <div class="col-8 d-flex align-items-center">
      <div class="card-body">
-     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="card-title display-2 fw-bold">${element.album.title}</h5></a>
+     <a href="albumPage.html?id=${element.album.id}&queryREF=${query1}&album=${element.album.title}">     <h5 class="bigTitle card-title display-2 fw-bold">${element.album.title}</h5></a>
          <a href="artist_page.html?artistId=${element.artist.id}"> <p class="card-text">
          ${element.artist.name}
          </p></a>

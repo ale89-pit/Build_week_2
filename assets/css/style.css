@@ -101,6 +101,15 @@ li span:hover {
   justify-content: space-between;
 }
 
+/* AGGIUNTA MSSSI */
+
+@media screen and (max-width: 768px) {
+  .bigTitle {
+    font-size: 2.3rem; /* Imposta la dimensione del titolo della card grande a 1.5rem in mobile */
+  }
+}
+/* FINE AGGIUNTA MASSI */
+
 /* SEARCH INPUT */
 
 #searchContainer {
