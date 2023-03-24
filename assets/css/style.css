@@ -342,3 +342,7 @@ a:link {
   text-decoration: none;
   color: white;
 }
+
+.btn-dark {
+  background-color: #000 !important;
+}
