@@ -138,6 +138,7 @@ const searchMusic = async function () {
 // SCRIVE CARD PRINCIPALE (ALBUM)
 
 const writeCard = function (musicList, query1) {
+  console.log(musicList[0]);
   musicList.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light bigCard">
  <div class="col-4 ps-0">
