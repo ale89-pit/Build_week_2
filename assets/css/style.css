@@ -45,7 +45,8 @@ ul li {
   font-weight: bold;
 }
 
-li i, li span {
+li i,
+li span {
   color: rgb(188, 188, 188);
 }
 
@@ -93,6 +94,9 @@ li span {
 }
 
 /* FINE SIDEBAR LEFT */
+.logo img {
+  width: 150px;
+}
 
 /* HOME */
 
@@ -155,7 +159,7 @@ li span {
 /* FINE HOME */
 
 /*SIDEBAR DX FRIENDS*/
-.friends:hover{
+.friends:hover {
   color: white;
   cursor: pointer;
 }
