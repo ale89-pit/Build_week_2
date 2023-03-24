@@ -111,16 +111,18 @@ let showSongs = (firstFiveSongs) => {
                                     <div class="col-10">
                                         <div class="card-body py-0">
                                             <p class="card-text m-0 songTitle">${song.title}</p>
-                                            <span class="streams d-md-none">34.356.743</span>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-4 d-none d-md-block">
-                            <span class="streams">34.356.743</span>
+                        <div class="col col-4 d-md-block">
+                            <span class="streams">${
+                              song.rank
+                            }</span>
                         </div>
-                        <div class="col col-2 d-none d-md-block">
+                        <div class="col col-2 d-md-block">
                             <span class="streams">${duration}</span>
                         </div>
                     </div>

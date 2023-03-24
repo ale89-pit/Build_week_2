@@ -27,7 +27,7 @@ const writeCard2 = function (tracklist) {
   tracklist.forEach((element) => {
     firstCard.innerHTML = `<div class="row g-0 w-100 text-light">
    <div class="col-4">
-    <img src="${element.album.cover_medium}" class="img-fluid rounded-start" alt="..." />
+    <img src="${element.album.cover_medium}" class="img-fluid ps-1 rounded" alt="..." />
     </a>  
    </div>
    
@@ -36,7 +36,7 @@ const writeCard2 = function (tracklist) {
         <p> ALBUM <p>
           
            <h5 class="card-title display-1 fw-bold text-truncate">${element.album.title}</h5>
-           <a href="artist_page.html?artistId=${element.artist.id}">
+           <a href="artist_page.html?artistId=${element.artist.id}" class="text-white">
            <p class="card-text">
                <small class="font-weight-bold">${element.artist.name}</small>
            </p>
@@ -45,7 +45,7 @@ const writeCard2 = function (tracklist) {
       </div>
      </div>`;
 
-    heroBg.style.backgroundImage = `url(${element.album.cover_medium})`;
+    heroBg.style.backgroundImage = `url(${element.album.cover_big})`;
   });
 
   tracklist.forEach((element, index) => {
@@ -54,7 +54,7 @@ const writeCard2 = function (tracklist) {
     let duration = `${minutes}:${seconds}`;
     if (element.album.title == queryAlbum) {
       songsList.innerHTML += `
-      <div class="row align-items-center my-3">
+      <div class="row align-items-center my-3 mb-5">
                         <div class="col d-flex align-items-center flex-grow-1">
                             <span class="mx-3">${index + 1}</span>
                             <div class="card artistSongCard">
@@ -68,14 +68,11 @@ const writeCard2 = function (tracklist) {
                                     </div>
                                     <div class="col-10">
                                         <div class="card-body py-0 d-flex me-2">
-                                        <div class="w-50 w-md-75 d-flex justify-content-between align-items-center>
+                                        <div class="w-100 w-md-75 d-flex justify-content-between align-items-center>
                                             <p class="card-text m-0 songTitle">${
                                               element.title
                                             }</p>
                                            </div>
-                                            <span class="streams d-md-none">${
-                                              element.rank
-                                            }</span>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +81,7 @@ const writeCard2 = function (tracklist) {
                         <div class="col col-4 d-none d-md-block">
                             <span class="streams">${element.rank}</span>
                         </div>
-                        <div class="col col-2 d-none d-md-block">
+                        <div class="col col-2 d-md-block">
                             <span class="streams">${duration}</span>
                         </div>
                     </div>`;

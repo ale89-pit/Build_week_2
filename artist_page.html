@@ -104,34 +104,46 @@
         <div id="mainContainer" class="col  mb-5">
             <div class="hero position-relative px-2">
                 <!-- ROW ARROW + USER -->
-                <div class="row justify-content-between align-items-center py-2">
-                    <!-- ARROW -->
-                    <div class="col">
-                        <i class="bi bi-arrow-left-circle-fill"></i>
-                        <i class="bi bi-arrow-right-circle-fill"></i>
-                    </div>
-                    <!-- FINE ARROW -->
-
-                    <!-- USER -->
-                    <div class="col d-flex justify-content-end">
-                        <div class="nav-item dropdown">
-                            <button class="btn btn-dark dropdown-toggle p-0 p-sm-1" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <img src="https://placekitten.com/30" alt="Avatar" class="rounded-circle">
-                                <span>Nome Profilo</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark p-0">
-                                <li>
-                                    <a class="dropdown-item px-1" href="#">
-                                        <img src="https://placekitten.com/30" alt="Avatar" class="rounded-circle">
-                                        <span>Altro Profilo</span>
-                                    </a>
-                                </li>
-                            </ul>
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center mt-4">
+                        <div class="d-flex ms-4">
+                            <a href="#" class="p-2 arrows me-2 text-decoration-none">&nbsp;<svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-left text-light" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                </svg>&nbsp;</a>
+                            <a href="#" class="p-2 arrows text-decoration-none">&nbsp;<svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chevron-right text-light" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                </svg>&nbsp;</a>
+                        </div>
+                        <!-- SEARCH INPUT MUSIC -->
+    
+                        <div id="searchContainer">
+                            <input class="d-block d-none" id="searchIcon" type="text"
+                                placeholder="Cerca la tua canzone preferita..." />
+                        </div>
+    
+                        <!-- FINE SEARCH INPUT MUSIC -->
+    
+                        <div class="me-4">
+                            <div class="dropdown text-bg-dark btn-dark border border-0 rounded-circle">
+                                <div class="btn btn-dark dropdown-toggle rounded-4" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" selected>
+                                    Profiles
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-dark bg-black">
+                                    <li><a class="dropdown-item border-top border-bottom border-dark" href="#">TEAM 1</a>
+                                    </li>
+                                    <li><a class="dropdown-item border-bottom border-dark" href="#">TEAM 2</a></li>
+                                    <li><a class="dropdown-item border-bottom border-dark" href="#">TEAM 3</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- FINE USER -->
-
                 </div>
                 <!-- FINE ROW ARROW + USER -->
 
